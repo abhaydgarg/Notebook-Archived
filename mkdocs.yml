@@ -1,0 +1,62 @@
+site_name: Notebook
+site_url: 'https://abhaydgarg.github.io/Notebook/index.html'
+repo_name: 'GitHub'
+repo_url: 'https://github.com/abhaydgarg/Notebook'
+edit_uri: 'https://github.com/abhaydgarg/Notebook/tree/master/src'
+site_description: 'Notebook collections'
+site_author: 'Abhay Garg'
+copyright: 'Abhay Garg'
+# google_analytics: ['UA-137991035-1', 'abhaydgarg.github.io/Notebook/']
+docs_dir: 'src'
+site_dir: 'docs'
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'blue'
+    accent: 'blue'
+  font:
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
+markdown_extensions:
+  - pymdownx.details
+  - admonition # https://squidfunk.github.io/mkdocs-material/extensions/admonition/
+  - meta # https://squidfunk.github.io/mkdocs-material/extensions/metadata/
+  - codehilite:
+      guess_lang: true
+      linenums: true
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex # https://squidfunk.github.io/mkdocs-material/extensions/pymdown/
+  - pymdownx.caret
+  - pymdownx.emoji: # https://3os.org/markdownCheatSheet/emoji
+      emoji_index: !!python/name:pymdownx.emoji.emojione
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+plugins:
+  - minify:
+      minify_html: true
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+nav:
+  - CS: computer-science/README.md
+  - Parser: parser/README.md
+  - Data structure and algorithms: data-structure-and-algorithms/README.md
+  - OOPS: oops/README.md
+  - Design patterns: design-patterns/README.md
+  - Regex: regex/README.md
+  - GIT: git/README.md
+  - CSS: css/README.md
+  - MySQL: mysql/README.md
+  - MongoDB: mongodb/README.md
+  - Javascript: javascript/README.md
+  - Node.js: nodejs/README.md
+  - Express.js: expressjs/README.md
+  - React: react/README.md
+  - Linters: linters/README.md
+  - GraphQL: graphql/README.md
+  - Redux saga: redux-saga/README.md
+  - RxJS: rxjs/README.md
+  - Typescript: typescript/README.md
+  - Web security: web-security/README.md
+  - React native: react-native/README.md
+  - Rust: rust/README.md

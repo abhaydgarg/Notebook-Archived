@@ -1,0 +1,9 @@
+# Joins
+
+Types of Joins.
+
+1. INNER JOIN
+2. LEFT JOIN
+3. RIGHT JOIN
+4. CROSS JOIN
+5. FULL JOIN

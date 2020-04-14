@@ -1,0 +1,437 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=description content="Notebook collections"><link href=https://abhaydgarg.github.io/Notebook/index.html/javascript/js/closure/ rel=canonical><meta name=author content="Abhay Garg"><meta name=lang:clipboard.copy content="Copy to clipboard"><meta name=lang:clipboard.copied content="Copied to clipboard"><meta name=lang:search.language content=en><meta name=lang:search.pipeline.stopwords content=True><meta name=lang:search.pipeline.trimmer content=True><meta name=lang:search.result.none content="No matching documents"><meta name=lang:search.result.one content="1 matching document"><meta name=lang:search.result.other content="# matching documents"><meta name=lang:search.tokenizer content=[\s\-]+><link rel="shortcut icon" href=../../../assets/images/favicon.png><meta name=generator content="mkdocs-1.0.4, mkdocs-material-4.4.2"><title>Closures - Notebook</title><link rel=stylesheet href=../../../assets/stylesheets/application.30686662.css><link rel=stylesheet href=../../../assets/stylesheets/application-palette.a8b3c06d.css><meta name=theme-color content=#2196f3><script src=../../../assets/javascripts/modernizr.74668098.js></script><link href=https://fonts.gstatic.com rel=preconnect crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono&display=fallback"><style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style><link rel=stylesheet href=../../../assets/fonts/material-icons.css></head> <body dir=ltr data-md-color-primary=blue data-md-color-accent=blue> <svg class=md-svg> <defs> <svg xmlns=http://www.w3.org/2000/svg width=416 height=448 viewbox="0 0 416 448" id=__github><path fill=currentColor d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg> </defs> </svg> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay data-md-component=overlay for=__drawer></label> <a href=#closures tabindex=1 class=md-skip> Skip to content </a> <header class=md-header data-md-component=header> <nav class="md-header-nav md-grid"> <div class=md-flex> <div class="md-flex__cell md-flex__cell--shrink"> <a href=https://abhaydgarg.github.io/Notebook/index.html title=Notebook class="md-header-nav__button md-logo"> <i class=md-icon></i> </a> </div> <div class="md-flex__cell md-flex__cell--shrink"> <label class="md-icon md-icon--menu md-header-nav__button" for=__drawer></label> </div> <div class="md-flex__cell md-flex__cell--stretch"> <div class="md-flex__ellipsis md-header-nav__title" data-md-component=title> <span class=md-header-nav__topic> Notebook </span> <span class=md-header-nav__topic> Closures </span> </div> </div> <div class="md-flex__cell md-flex__cell--shrink"> </div> <div class="md-flex__cell md-flex__cell--shrink"> <div class=md-header-nav__source> <a href=https://github.com/abhaydgarg/Notebook/ title="Go to repository" class=md-source data-md-source=github> <div class=md-source__icon> <svg viewbox="0 0 24 24" width=24 height=24> <use xlink:href=#__github width=24 height=24></use> </svg> </div> <div class=md-source__repository> GitHub </div> </a> </div> </div> </div> </nav> </header> <div class=md-container> <main class=md-main role=main> <div class="md-main__inner md-grid" data-md-component=container> <div class="md-sidebar md-sidebar--primary" data-md-component=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary" data-md-level=0> <label class="md-nav__title md-nav__title--site" for=__drawer> <a href=https://abhaydgarg.github.io/Notebook/index.html title=Notebook class="md-nav__button md-logo"> <i class=md-icon></i> </a> Notebook </label> <div class=md-nav__source> <a href=https://github.com/abhaydgarg/Notebook/ title="Go to repository" class=md-source data-md-source=github> <div class=md-source__icon> <svg viewbox="0 0 24 24" width=24 height=24> <use xlink:href=#__github width=24 height=24></use> </svg> </div> <div class=md-source__repository> GitHub </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../../computer-science/ title=CS class=md-nav__link> CS </a> </li> <li class=md-nav__item> <a href=../../../parser/ title=Parser class=md-nav__link> Parser </a> </li> <li class=md-nav__item> <a href=../../../data-structure-and-algorithms/ title="Data structure and algorithms" class=md-nav__link> Data structure and algorithms </a> </li> <li class=md-nav__item> <a href=../../../oops/ title=OOPS class=md-nav__link> OOPS </a> </li> <li class=md-nav__item> <a href=../../../design-patterns/ title="Design patterns" class=md-nav__link> Design patterns </a> </li> <li class=md-nav__item> <a href=../../../regex/ title=Regex class=md-nav__link> Regex </a> </li> <li class=md-nav__item> <a href=../../../git/ title=GIT class=md-nav__link> GIT </a> </li> <li class=md-nav__item> <a href=../../../css/ title=CSS class=md-nav__link> CSS </a> </li> <li class=md-nav__item> <a href=../../../mysql/ title=MySQL class=md-nav__link> MySQL </a> </li> <li class=md-nav__item> <a href=../../../mongodb/ title=MongoDB class=md-nav__link> MongoDB </a> </li> <li class=md-nav__item> <a href=../../ title=Javascript class=md-nav__link> Javascript </a> </li> <li class=md-nav__item> <a href=../../../nodejs/ title=Node.js class=md-nav__link> Node.js </a> </li> <li class=md-nav__item> <a href=../../../expressjs/ title=Express.js class=md-nav__link> Express.js </a> </li> <li class=md-nav__item> <a href=../../../react/ title=React class=md-nav__link> React </a> </li> <li class=md-nav__item> <a href=../../../linters/ title=Linters class=md-nav__link> Linters </a> </li> <li class=md-nav__item> <a href=../../../graphql/ title=GraphQL class=md-nav__link> GraphQL </a> </li> <li class=md-nav__item> <a href=../../../redux-saga/ title="Redux saga" class=md-nav__link> Redux saga </a> </li> <li class=md-nav__item> <a href=../../../rxjs/ title=RxJS class=md-nav__link> RxJS </a> </li> <li class=md-nav__item> <a href=../../../typescript/ title=Typescript class=md-nav__link> Typescript </a> </li> <li class=md-nav__item> <a href=../../../web-security/ title="Web security" class=md-nav__link> Web security </a> </li> <li class=md-nav__item> <a href=../../../react-native/ title="React native" class=md-nav__link> React native </a> </li> <li class=md-nav__item> <a href=../../../rust/ title=Rust class=md-nav__link> Rust </a> </li> <li class=md-nav__item> <a href=../../../python/ title=Python class=md-nav__link> Python </a> </li> <li class=md-nav__item> <a href=../../../php/ title=PHP class=md-nav__link> PHP </a> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary"> <label class=md-nav__title for=__toc>Table of contents</label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=#a-few-usage class=md-nav__link> A few usage </a> <nav class=md-nav> <ul class=md-nav__list> <li class=md-nav__item> <a href=#1-using-a-closure-instead-of-objects class=md-nav__link> [1] Using a closure instead of objects </a> <nav class=md-nav> <ul class=md-nav__list> <li class=md-nav__item> <a href=#closures-way class=md-nav__link> Closures way </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#2-namespacing-private-functions class=md-nav__link> [2] Namespacing private functions </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#scope-chain class=md-nav__link> Scope chain </a> </li> <li class=md-nav__item> <a href=#closures-rules-and-side-effects class=md-nav__link> Closures’ rules and side effects </a> <nav class=md-nav> <ul class=md-nav__list> <li class=md-nav__item> <a href=#1-the-important-thing-to-remember-is-that-closure-scope-does-not-work-backwards class=md-nav__link> [1] The important thing to remember is that Closure scope does not work backwards </a> </li> <li class=md-nav__item> <a href=#2-closures-uses-only-static-lexical-scope-for-identifier-resolution class=md-nav__link> [2] Closures uses only static (lexical) scope for identifier resolution. </a> </li> <li class=md-nav__item> <a href=#3-closures-have-access-to-the-outer-functions-variable-even-after-the-outer-function-returns class=md-nav__link> [3] Closures have access to the outer function’s variable even after the outer function returns </a> </li> <li class=md-nav__item> <a href=#4-inner-functions-store-their-outer-functions-variables-by-reference-not-by-value class=md-nav__link> [4] Inner functions store their outer function’s variables by reference, not by value </a> </li> <li class=md-nav__item> <a href=#5-closures-gone-awry-away-from-the-usual-or-expected-course class=md-nav__link> [5] Closures Gone Awry** (away from the usual or expected course) </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#callback class=md-nav__link> Callback </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content> <article class="md-content__inner md-typeset"> <a href=https://github.com/abhaydgarg/Notebook/tree/master/src/javascript/js/closure.md title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a> <h1 id=closures>Closures<a class=headerlink href=#closures title="Permanent link">&para;</a></h1> <p>Whenever you see a function within another function, the inner function has access to the scope in the outer function, this is called Closure.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kd>var</span> <span class=nx>name</span> <span class=o>=</span> <span class=s1>&#39;Todd&#39;</span><span class=p>;</span>
+<span class=kd>var</span> <span class=nx>scope1</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+  <span class=c1>// name is available here</span>
+  <span class=kd>var</span> <span class=nx>scope2</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=c1>// name is available here too</span>
+    <span class=kd>var</span> <span class=nx>scope3</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+      <span class=c1>// name is also available here!</span>
+    <span class=p>};</span>
+  <span class=p>};</span>
+<span class=p>};</span>
+</pre></div> </td></tr></table> <h2 id=a-few-usage>A few usage<a class=headerlink href=#a-few-usage title="Permanent link">&para;</a></h2> <h3 id=1-using-a-closure-instead-of-objects>[1] Using a closure instead of objects<a class=headerlink href=#1-using-a-closure-instead-of-objects title="Permanent link">&para;</a></h3> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=c1>// Define the constructor</span>
+<span class=kd>function</span> <span class=nx>Person</span><span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>)</span> <span class=p>{</span>
+
+  <span class=c1>// Store the message in internal state</span>
+  <span class=k>this</span><span class=p>.</span><span class=nx>message</span> <span class=o>=</span> <span class=nx>name</span> <span class=o>+</span> <span class=s2>&quot;, who is &quot;</span> <span class=o>+</span> <span class=nx>age</span> <span class=o>+</span> <span class=s2>&quot; years old, says hi!&quot;</span><span class=p>;</span>
+
+<span class=p>};</span>
+
+<span class=c1>// Define a sync method</span>
+<span class=nx>Person</span><span class=p>.</span><span class=nx>prototype</span><span class=p>.</span><span class=nx>greet</span> <span class=o>=</span> <span class=kd>function</span> <span class=nx>greet</span><span class=p>()</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=nx>message</span><span class=p>);</span>
+<span class=p>};</span>
+
+<span class=c1>// Define a method with async internals</span>
+<span class=nx>Person</span><span class=p>.</span><span class=nx>prototype</span><span class=p>.</span><span class=nx>slowGreet</span> <span class=o>=</span> <span class=kd>function</span> <span class=nx>slowGreet</span><span class=p>()</span> <span class=p>{</span>
+  <span class=kd>var</span> <span class=nx>self</span> <span class=o>=</span> <span class=k>this</span><span class=p>;</span> <span class=c1>// Use a closure to preserve `this`</span>
+  <span class=nx>setTimeout</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>self</span><span class=p>.</span><span class=nx>message</span><span class=p>);</span>
+  <span class=p>},</span> <span class=mi>1000</span><span class=p>);</span>
+<span class=p>};</span>
+
+<span class=c1>// Export this file as a module</span>
+<span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=nx>Person</span><span class=p>;</span>
+
+<span class=c1>// ### Use like this ###</span>
+
+<span class=kd>var</span> <span class=nx>Person</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;./personclass&#39;</span><span class=p>);</span>
+<span class=kd>var</span> <span class=nx>bob</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Person</span><span class=p>(</span><span class=s2>&quot;Bob&quot;</span><span class=p>,</span> <span class=mi>47</span><span class=p>);</span>
+<span class=nx>bob</span><span class=p>.</span><span class=nx>greet</span><span class=p>();</span>
+</pre></div> </td></tr></table> <h4 id=closures-way>Closures way<a class=headerlink href=#closures-way title="Permanent link">&para;</a></h4> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=c1>// Define the factory</span>
+<span class=kd>function</span> <span class=nx>newPerson</span><span class=p>(</span><span class=nx>name</span><span class=p>,</span> <span class=nx>age</span><span class=p>)</span> <span class=p>{</span>
+
+  <span class=c1>// Store the message in a closure</span>
+  <span class=kd>var</span> <span class=nx>message</span> <span class=o>=</span> <span class=nx>name</span> <span class=o>+</span> <span class=s2>&quot;, who is &quot;</span> <span class=o>+</span> <span class=nx>age</span> <span class=o>+</span> <span class=s2>&quot; years old, says hi!&quot;</span><span class=p>;</span>
+
+  <span class=k>return</span> <span class=p>{</span>
+
+    <span class=c1>// Define a sync function</span>
+    <span class=nx>greet</span><span class=o>:</span> <span class=kd>function</span> <span class=nx>greet</span><span class=p>()</span> <span class=p>{</span>
+      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>message</span><span class=p>);</span>
+    <span class=p>},</span>
+
+    <span class=c1>// Define a function with async internals</span>
+    <span class=nx>slowGreet</span><span class=o>:</span> <span class=kd>function</span> <span class=nx>slowGreet</span><span class=p>()</span> <span class=p>{</span>
+      <span class=nx>setTimeout</span><span class=p>(</span><span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+        <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>message</span><span class=p>);</span>
+      <span class=p>},</span> <span class=mi>1000</span><span class=p>);</span>
+    <span class=p>}</span>
+
+  <span class=p>};</span>
+<span class=p>}</span>
+
+<span class=c1>// Export this file as a module</span>
+<span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=nx>newPerson</span><span class=p>;</span>
+
+<span class=err>###</span> <span class=nx>Use</span> <span class=nx>like</span> <span class=k>this</span> <span class=err>###</span>
+<span class=kd>var</span> <span class=nx>newPerson</span> <span class=o>=</span> <span class=nx>require</span><span class=p>(</span><span class=s1>&#39;./personfactory&#39;</span><span class=p>);</span>
+<span class=kd>var</span> <span class=nx>tim</span> <span class=o>=</span> <span class=nx>newPerson</span><span class=p>(</span><span class=s2>&quot;Tim&quot;</span><span class=p>,</span> <span class=mi>28</span><span class=p>);</span>
+<span class=nx>tim</span><span class=p>.</span><span class=nx>greet</span><span class=p>();</span>
+</pre></div> </td></tr></table> <p>The difference is, when using object we can use prototype to make comman features to be shared among objects which saves memory where as in clousres way the whole function context is going to copy and assign to variable.</p> <h3 id=2-namespacing-private-functions>[2] Namespacing private functions<a class=headerlink href=#2-namespacing-private-functions title="Permanent link">&para;</a></h3> <p>Many object-oriented languages provide the ability to declare methods as either public or private. JavaScript doesn’t have this functionality built in, but it does allow to emulate this functionality through the use of closures, which is known as the module pattern.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kd>var</span> <span class=nx>dwightSalary</span> <span class=o>=</span> <span class=p>(</span><span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nx>salary</span> <span class=o>=</span> <span class=mi>60000</span><span class=p>;</span>
+    <span class=kd>function</span> <span class=nx>changeBy</span><span class=p>(</span><span class=nx>amount</span><span class=p>)</span> <span class=p>{</span>
+        <span class=nx>salary</span> <span class=o>+=</span> <span class=nx>amount</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=p>{</span>
+        <span class=nx>raise</span><span class=o>:</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+            <span class=nx>changeBy</span><span class=p>(</span><span class=mi>5000</span><span class=p>);</span>
+        <span class=p>},</span>
+        <span class=nx>lower</span><span class=o>:</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+            <span class=nx>changeBy</span><span class=p>(</span><span class=o>-</span><span class=mi>5000</span><span class=p>);</span>
+        <span class=p>},</span>
+        <span class=nx>currentAmount</span><span class=o>:</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+            <span class=k>return</span> <span class=nx>salary</span><span class=p>;</span>
+        <span class=p>}</span>
+    <span class=p>};</span>
+<span class=p>})();</span>
+
+<span class=nx>alert</span><span class=p>(</span><span class=nx>dwightSalary</span><span class=p>.</span><span class=nx>currentAmount</span><span class=p>());</span> <span class=c1>// $60,000</span>
+<span class=nx>dwightSalary</span><span class=p>.</span><span class=nx>raise</span><span class=p>();</span>
+<span class=nx>alert</span><span class=p>(</span><span class=nx>dwightSalary</span><span class=p>.</span><span class=nx>currentAmount</span><span class=p>());</span> <span class=c1>// $65,000</span>
+<span class=nx>dwightSalary</span><span class=p>.</span><span class=nx>lower</span><span class=p>();</span>
+<span class=nx>dwightSalary</span><span class=p>.</span><span class=nx>lower</span><span class=p>();</span>
+<span class=nx>alert</span><span class=p>(</span><span class=nx>dwightSalary</span><span class=p>.</span><span class=nx>currentAmount</span><span class=p>());</span> <span class=c1>// $55,000</span>
+
+<span class=nx>dwightSalary</span><span class=p>.</span><span class=nx>changeBy</span><span class=p>(</span><span class=mi>10000</span><span class=p>)</span> <span class=c1>// TypeError: undefined is not a function</span>
+</pre></div> </td></tr></table> <p>Using closures to namespace private functions keeps more general namespaces clean, preventing naming collisions. Neither the <em>salary</em> variable nor the <em>changeBy</em> function are available outside of <em>dwightSalary</em>. However, <em>raise, lower</em> and <em>currentAmount</em> all have access to them and can be called on <em>dwightSalary</em>.</p> <h2 id=scope-chain>Scope chain<a class=headerlink href=#scope-chain title="Permanent link">&para;</a></h2> <p>How variable is looked up. During variable look up, JavaScript starts at the currents scope and searches outwards until it finds the variable/object/function it was looking for.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kd>function</span> <span class=nx>foo</span><span class=p>(</span><span class=nx>a</span><span class=p>)</span> <span class=p>{</span>
+  <span class=kd>var</span> <span class=nx>b</span> <span class=o>=</span> <span class=nx>a</span> <span class=o>*</span> <span class=mi>2</span><span class=p>;</span>
+  <span class=kd>function</span> <span class=nx>bar</span><span class=p>(</span><span class=nx>c</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span> <span class=nx>a</span><span class=p>,</span> <span class=nx>b</span><span class=p>,</span> <span class=nx>c</span> <span class=p>);</span>
+  <span class=p>}</span>
+  <span class=nx>bar</span><span class=p>(</span> <span class=nx>b</span> <span class=o>*</span> <span class=mi>3</span> <span class=p>);</span>
+<span class=p>}</span>
+<span class=nx>foo</span><span class=p>(</span> <span class=mi>2</span> <span class=p>);</span> <span class=c1>// 2, 4, 12</span>
+</pre></div> </td></tr></table> <p>The engine executes the <code>console.log(..)</code> statement and goes looking for the three referenced variables a, b and c . It first starts with the innermost scope, the scope of the <code>bar(..)</code> function. It won't find a there, so it goes up one level, out to the next nearest scope, the scope of <code>foo(..)</code>. It finds a there, and so it uses that <code>a</code> . Same thing for <code>b</code>. But <code>c</code> , it does find inside of <code>bar(..)</code>.</p> <p><strong>Note:</strong></p> <ol> <li>Scope look-up stops once it finds the first match.</li> <li>Scope chain tells how closure works.</li> </ol> <h2 id=closures-rules-and-side-effects>Closures’ rules and side effects<a class=headerlink href=#closures-rules-and-side-effects title="Permanent link">&para;</a></h2> <h3 id=1-the-important-thing-to-remember-is-that-closure-scope-does-not-work-backwards>[1] The important thing to remember is that Closure scope does not work backwards<a class=headerlink href=#1-the-important-thing-to-remember-is-that-closure-scope-does-not-work-backwards title="Permanent link">&para;</a></h3> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=c1>// name = undefined</span>
+<span class=kd>var</span> <span class=nx>scope1</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+  <span class=c1>// name = undefined</span>
+  <span class=kd>var</span> <span class=nx>scope2</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=c1>// name = undefined</span>
+    <span class=kd>var</span> <span class=nx>scope3</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+      <span class=kd>var</span> <span class=nx>name</span> <span class=o>=</span> <span class=s1>&#39;Todd&#39;</span><span class=p>;</span> <span class=c1>// locally scoped</span>
+    <span class=p>};</span>
+  <span class=p>};</span>
+<span class=p>};</span>
+</pre></div> </td></tr></table> <h3 id=2-closures-uses-only-static-lexical-scope-for-identifier-resolution>[2] Closures uses only static (lexical) scope for identifier resolution.<a class=headerlink href=#2-closures-uses-only-static-lexical-scope-for-identifier-resolution title="Permanent link">&para;</a></h3> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kd>var</span> <span class=nx>x</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
+
+<span class=kd>function</span> <span class=nx>foo</span><span class=p>()</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>x</span><span class=p>);</span>
+<span class=p>}</span>
+
+<span class=p>(</span><span class=kd>function</span> <span class=p>(</span><span class=nx>funArg</span><span class=p>)</span> <span class=p>{</span>
+
+  <span class=kd>var</span> <span class=nx>x</span> <span class=o>=</span> <span class=mi>20</span><span class=p>;</span>
+
+  <span class=c1>// variable &quot;x&quot; for funArg is saved statically</span>
+  <span class=c1>// from the (lexical) context, in which it was created</span>
+  <span class=c1>// therefore:</span>
+
+  <span class=nx>funArg</span><span class=p>();</span> <span class=c1>// 10, but not 20</span>
+
+<span class=p>})(</span><span class=nx>foo</span><span class=p>);</span>
+
+
+<span class=c1>// Technically, the variables of a parent context are</span>
+<span class=c1>// saved in the internal [[Scope]] property of the</span>
+<span class=c1>// function. All functions in ECMAScript are closures,</span>
+<span class=c1>// since all of them at creation save scope chain of a</span>
+<span class=c1>// parent context. The important moment here is that,</span>
+<span class=c1>// regardless — whether a function will be activated later</span>
+<span class=c1>// or not — the parent scope is already saved to it at</span>
+<span class=c1>// creation moment.</span>
+</pre></div> </td></tr></table> <h3 id=3-closures-have-access-to-the-outer-functions-variable-even-after-the-outer-function-returns>[3] Closures have access to the outer function’s variable even after the outer function returns<a class=headerlink href=#3-closures-have-access-to-the-outer-functions-variable-even-after-the-outer-function-returns title="Permanent link">&para;</a></h3> <p>One of the most important and ticklish features with closures is that the inner function still has access to the outer function’s variables even after the outer function has returned. This means that even after the outer function has returned, the inner function still has access to the outer function’s variables. Therefore, you can call the inner function later in your program.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kd>function</span> <span class=nx>celebrityName</span><span class=p>(</span><span class=nx>firstName</span><span class=p>)</span> <span class=p>{</span>
+  <span class=kd>var</span> <span class=nx>nameIntro</span> <span class=o>=</span> <span class=s2>&quot;This celebrity is &quot;</span><span class=p>;</span>
+  <span class=c1>// this inner function has access to the outer function&#39;s variables,</span>
+  <span class=c1>// including the parameter</span>
+  <span class=kd>function</span> <span class=nx>lastName</span><span class=p>(</span><span class=nx>theLastName</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=nx>nameIntro</span> <span class=o>+</span> <span class=nx>firstName</span> <span class=o>+</span> <span class=s2>&quot; &quot;</span> <span class=o>+</span> <span class=nx>theLastName</span><span class=p>;</span>
+  <span class=p>}</span>
+  <span class=k>return</span> <span class=nx>lastName</span><span class=p>;</span>
+<span class=p>}</span>
+<span class=c1>// At this juncture, the celebrityName outer function has returned.</span>
+<span class=kd>var</span> <span class=nx>mjName</span> <span class=o>=</span> <span class=nx>celebrityName</span><span class=p>(</span><span class=s2>&quot;Michael&quot;</span><span class=p>);</span>
+<span class=c1>// The closure (lastName) is called here after the outer function has returned above</span>
+<span class=c1>// Yet, the closure still has access to the outer function&#39;s variables and parameter</span>
+<span class=nx>mjName</span><span class=p>(</span><span class=s2>&quot;Jackson&quot;</span><span class=p>);</span> <span class=c1>// This celebrity is Michael Jackson</span>
+</pre></div> </td></tr></table> <h3 id=4-inner-functions-store-their-outer-functions-variables-by-reference-not-by-value>[4] Inner functions store their outer function’s variables by reference, not by value<a class=headerlink href=#4-inner-functions-store-their-outer-functions-variables-by-reference-not-by-value title="Permanent link">&para;</a></h3> <p><strong>All </strong><em><strong>inner</strong></em><strong> functions </strong><em><strong>share</strong></em><strong> the </strong><em><strong>same parent</strong></em><strong> scope.</strong> [[scope]] or parent context is shared among all inner functions. So if any change to parent's variable in any inner function reflect the change in other inner function too.</p> <p>They do not copy the actual value. Closures get more interesting when the value of the outer function’s variable changes before the closure is called. And this powerful feature can be harnessed in creative ways, such as this private variables example first demonstrated by Douglas Crockford:</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kd>function</span> <span class=nx>celebrityID</span><span class=p>()</span> <span class=p>{</span>
+  <span class=kd>var</span> <span class=nx>celebrityID</span> <span class=o>=</span> <span class=mi>999</span><span class=p>;</span>
+  <span class=c1>// We are returning an object with some inner functions</span>
+  <span class=c1>// All the inner functions have access to the outer function&#39;s variables</span>
+  <span class=k>return</span> <span class=p>{</span>
+    <span class=nx>getID</span><span class=o>:</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+      <span class=c1>// This inner function will return the UPDATED celebrityID variable</span>
+      <span class=c1>// It will return the current value of celebrityID, even after the</span>
+      <span class=c1>// changeTheID function changes it</span>
+      <span class=k>return</span> <span class=nx>celebrityID</span><span class=p>;</span>
+    <span class=p>},</span>
+    <span class=nx>setID</span><span class=o>:</span> <span class=kd>function</span><span class=p>(</span><span class=nx>theNewID</span><span class=p>)</span> <span class=p>{</span>
+      <span class=c1>// This inner function will change the outer function&#39;s variable anytime</span>
+      <span class=nx>celebrityID</span> <span class=o>=</span> <span class=nx>theNewID</span><span class=p>;</span>
+    <span class=p>}</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>var</span> <span class=nx>mjID</span> <span class=o>=</span> <span class=nx>celebrityID</span><span class=p>();</span> <span class=c1>// At this juncture, the celebrityID outer function has returned.</span>
+<span class=nx>mjID</span><span class=p>.</span><span class=nx>getID</span><span class=p>();</span> <span class=c1>// 999</span>
+<span class=nx>mjID</span><span class=p>.</span><span class=nx>setID</span><span class=p>(</span><span class=mi>567</span><span class=p>);</span> <span class=c1>// Changes the outer function&#39;s variable</span>
+<span class=nx>mjID</span><span class=p>.</span><span class=nx>getID</span><span class=p>();</span> <span class=c1>// 567: It returns the updated celebrityId variable</span>
+</pre></div> </td></tr></table> <h3 id=5-closures-gone-awry-away-from-the-usual-or-expected-course>[5] Closures Gone Awry** (away from the usual or expected course)<a class=headerlink href=#5-closures-gone-awry-away-from-the-usual-or-expected-course title="Permanent link">&para;</a></h3> <p>Because closures have access to the updated values of the outer function’s variables, they can also lead to bugs when the outer function’s variable changes with a for loop. Thus:</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kd>var</span> <span class=nx>data</span> <span class=o>=</span> <span class=p>[];</span>
+
+<span class=k>for</span> <span class=p>(</span><span class=kd>var</span> <span class=nx>k</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>k</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=nx>k</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+  <span class=nx>data</span><span class=p>[</span><span class=nx>k</span><span class=p>]</span> <span class=o>=</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>k</span><span class=p>);</span>
+  <span class=p>};</span>
+<span class=p>}</span>
+
+<span class=nx>data</span><span class=p>[</span><span class=mi>0</span><span class=p>]();</span> <span class=c1>// 3, but not 0</span>
+<span class=nx>data</span><span class=p>[</span><span class=mi>1</span><span class=p>]();</span> <span class=c1>// 3, but not 1</span>
+<span class=nx>data</span><span class=p>[</span><span class=mi>2</span><span class=p>]();</span> <span class=c1>// 3, but not 2</span>
+</pre></div> </td></tr></table> <p>The reason this happened was because, as we have discussed in the previous example, the closure (the anonymous function in this example) has access to the outer function’s variables by reference, not by value. Accordingly, at the moment of function activations or called, last assigned value of <code>k</code> variable, i.e. <code>3</code> is used.</p> <p><strong>Solution</strong> - Execute the function when declared, using self-executed function.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kd>var</span> <span class=nx>data</span> <span class=o>=</span> <span class=p>[];</span>
+
+<span class=k>for</span> <span class=p>(</span><span class=kd>var</span> <span class=nx>k</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>k</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span> <span class=nx>k</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+  <span class=nx>data</span><span class=p>[</span><span class=nx>k</span><span class=p>]</span> <span class=o>=</span> <span class=p>(</span><span class=kd>function</span> <span class=nx>_helper</span><span class=p>(</span><span class=nx>x</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=kd>function</span> <span class=p>()</span> <span class=p>{</span>
+      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>x</span><span class=p>);</span>
+    <span class=p>};</span>
+  <span class=p>})(</span><span class=nx>k</span><span class=p>);</span> <span class=c1>// pass &quot;k&quot; value</span>
+<span class=p>}</span>
+
+<span class=c1>// now it is correct</span>
+<span class=nx>data</span><span class=p>[</span><span class=mi>0</span><span class=p>]();</span> <span class=c1>// 0</span>
+<span class=nx>data</span><span class=p>[</span><span class=mi>1</span><span class=p>]();</span> <span class=c1>// 1</span>
+<span class=nx>data</span><span class=p>[</span><span class=mi>2</span><span class=p>]();</span> <span class=c1>// 2</span>
+
+<span class=cm>/**</span>
+<span class=cm>First, the function _helper is created and immediately activated with the argument k.</span>
+
+<span class=cm>Then, returned value of the _helper function is also a function, and exactly it is saved to</span>
+<span class=cm>the corresponding element of the data array.</span>
+
+<span class=cm>This technique provides the following effect: being activated, the _helper every time</span>
+<span class=cm>creates a new activation object which has argument x, and the value of this argument is</span>
+<span class=cm>the passed value of k variable.</span>
+<span class=cm>**/</span>
+</pre></div> </td></tr></table> <blockquote> <p><strong>It is important to take note</strong> that closures cannot access the outer function’s <em>this</em> variable by using the <em>this</em> keyword because the <em>this</em> variable is accessible only by the function itself, not by inner functions.</p> </blockquote> <h2 id=callback>Callback<a class=headerlink href=#callback title="Permanent link">&para;</a></h2> <p>A callback function, also known as a higher-order function, is a function that is passed to another function (let’s call this other function “otherFunction”) as a parameter, and the callback function is called (or executed) inside the otherFunction. A callback function is essentially a pattern (an established solution to a common problem), and therefore, the use of a callback function is also known as a callback pattern.</p> <p><strong>Callbacks and closures.</strong> As we know, closures have access to the containing function's scope, so the callback function can access the containing functions' variables, and even the variables from the global scope. JavaScript's support for closures allow you to register callbacks that, when executed, maintain access to the environment in which they were created even though the execution of the callback creates a new call stack entirely (execute somewhere else but sill maintain the state where they are defined). Callback almost magically -- remember the context in which it was declared, along with all the variables available in that context and any parent contexts. Consider the following example:</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kd>function</span> <span class=nx>changeHeaderDeferred</span><span class=p>()</span> <span class=p>{</span>
+  <span class=kd>var</span> <span class=nx>header</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementById</span><span class=p>(</span><span class=s2>&quot;header&quot;</span><span class=p>);</span>
+
+  <span class=nx>setTimeout</span><span class=p>(</span><span class=kd>function</span> <span class=nx>changeHeader</span><span class=p>()</span> <span class=p>{</span>
+    <span class=nx>header</span><span class=p>.</span><span class=nx>style</span><span class=p>.</span><span class=nx>color</span> <span class=o>=</span> <span class=s2>&quot;red&quot;</span><span class=p>;</span>
+
+    <span class=k>return</span> <span class=kc>false</span><span class=p>;</span>
+  <span class=p>},</span> <span class=mi>100</span><span class=p>);</span>
+
+  <span class=k>return</span> <span class=kc>false</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=nx>changeHeaderDeferred</span><span class=p>();</span>
+</pre></div> </td></tr></table> <p>In this example, the <code>changeHeaderDeferred</code> function is executed which includes variable header. The function <code>setTimeout</code> is invoked, which causes a message (plus the <code>changeHeader</code> callback) to be added to the message queue approximately 100 milliseconds in the future. The <code>changeHeaderDeferred</code> function then returns <code>false</code>, ending the processing of the first message – but the header variable is still referenced via a closure and is not garbage collected. When the second message is processed (the <code>changeHeader</code> function) it maintains access to the header variable declared in the outer function's scope. Once the second message (the <code>changeHeader</code> function) is processed, the header variable can be garbage collected.</p> </article> </div> </div> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-footer-copyright> <div class=md-footer-copyright__highlight> Abhay Garg </div> powered by <a href=https://www.mkdocs.org>MkDocs</a> and <a href=https://squidfunk.github.io/mkdocs-material/ > Material for MkDocs</a> </div> </div> </div> </footer> </div> <script src=../../../assets/javascripts/application.c648116f.js></script> <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script> <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script> </body> </html>

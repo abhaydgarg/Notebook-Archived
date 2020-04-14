@@ -1,0 +1,206 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=description content="Notebook collections"><link href=https://abhaydgarg.github.io/Notebook/index.html/rxjs/rxjs/ rel=canonical><meta name=author content="Abhay Garg"><meta name=lang:clipboard.copy content="Copy to clipboard"><meta name=lang:clipboard.copied content="Copied to clipboard"><meta name=lang:search.language content=en><meta name=lang:search.pipeline.stopwords content=True><meta name=lang:search.pipeline.trimmer content=True><meta name=lang:search.result.none content="No matching documents"><meta name=lang:search.result.one content="1 matching document"><meta name=lang:search.result.other content="# matching documents"><meta name=lang:search.tokenizer content=[\s\-]+><link rel="shortcut icon" href=../../assets/images/favicon.png><meta name=generator content="mkdocs-1.0.4, mkdocs-material-4.4.2"><title>RXJS - Notebook</title><link rel=stylesheet href=../../assets/stylesheets/application.30686662.css><link rel=stylesheet href=../../assets/stylesheets/application-palette.a8b3c06d.css><meta name=theme-color content=#2196f3><script src=../../assets/javascripts/modernizr.74668098.js></script><link href=https://fonts.gstatic.com rel=preconnect crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono&display=fallback"><style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style><link rel=stylesheet href=../../assets/fonts/material-icons.css></head> <body dir=ltr data-md-color-primary=blue data-md-color-accent=blue> <svg class=md-svg> <defs> <svg xmlns=http://www.w3.org/2000/svg width=416 height=448 viewbox="0 0 416 448" id=__github><path fill=currentColor d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg> </defs> </svg> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay data-md-component=overlay for=__drawer></label> <a href=#rxjs tabindex=1 class=md-skip> Skip to content </a> <header class=md-header data-md-component=header> <nav class="md-header-nav md-grid"> <div class=md-flex> <div class="md-flex__cell md-flex__cell--shrink"> <a href=https://abhaydgarg.github.io/Notebook/index.html title=Notebook class="md-header-nav__button md-logo"> <i class=md-icon></i> </a> </div> <div class="md-flex__cell md-flex__cell--shrink"> <label class="md-icon md-icon--menu md-header-nav__button" for=__drawer></label> </div> <div class="md-flex__cell md-flex__cell--stretch"> <div class="md-flex__ellipsis md-header-nav__title" data-md-component=title> <span class=md-header-nav__topic> Notebook </span> <span class=md-header-nav__topic> RXJS </span> </div> </div> <div class="md-flex__cell md-flex__cell--shrink"> </div> <div class="md-flex__cell md-flex__cell--shrink"> <div class=md-header-nav__source> <a href=https://github.com/abhaydgarg/Notebook/ title="Go to repository" class=md-source data-md-source=github> <div class=md-source__icon> <svg viewbox="0 0 24 24" width=24 height=24> <use xlink:href=#__github width=24 height=24></use> </svg> </div> <div class=md-source__repository> GitHub </div> </a> </div> </div> </div> </nav> </header> <div class=md-container> <main class=md-main role=main> <div class="md-main__inner md-grid" data-md-component=container> <div class="md-sidebar md-sidebar--primary" data-md-component=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary" data-md-level=0> <label class="md-nav__title md-nav__title--site" for=__drawer> <a href=https://abhaydgarg.github.io/Notebook/index.html title=Notebook class="md-nav__button md-logo"> <i class=md-icon></i> </a> Notebook </label> <div class=md-nav__source> <a href=https://github.com/abhaydgarg/Notebook/ title="Go to repository" class=md-source data-md-source=github> <div class=md-source__icon> <svg viewbox="0 0 24 24" width=24 height=24> <use xlink:href=#__github width=24 height=24></use> </svg> </div> <div class=md-source__repository> GitHub </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../computer-science/ title=CS class=md-nav__link> CS </a> </li> <li class=md-nav__item> <a href=../../parser/ title=Parser class=md-nav__link> Parser </a> </li> <li class=md-nav__item> <a href=../../data-structure-and-algorithms/ title="Data structure and algorithms" class=md-nav__link> Data structure and algorithms </a> </li> <li class=md-nav__item> <a href=../../oops/ title=OOPS class=md-nav__link> OOPS </a> </li> <li class=md-nav__item> <a href=../../design-patterns/ title="Design patterns" class=md-nav__link> Design patterns </a> </li> <li class=md-nav__item> <a href=../../regex/ title=Regex class=md-nav__link> Regex </a> </li> <li class=md-nav__item> <a href=../../git/ title=GIT class=md-nav__link> GIT </a> </li> <li class=md-nav__item> <a href=../../css/ title=CSS class=md-nav__link> CSS </a> </li> <li class=md-nav__item> <a href=../../mysql/ title=MySQL class=md-nav__link> MySQL </a> </li> <li class=md-nav__item> <a href=../../mongodb/ title=MongoDB class=md-nav__link> MongoDB </a> </li> <li class=md-nav__item> <a href=../../javascript/ title=Javascript class=md-nav__link> Javascript </a> </li> <li class=md-nav__item> <a href=../../nodejs/ title=Node.js class=md-nav__link> Node.js </a> </li> <li class=md-nav__item> <a href=../../expressjs/ title=Express.js class=md-nav__link> Express.js </a> </li> <li class=md-nav__item> <a href=../../react/ title=React class=md-nav__link> React </a> </li> <li class=md-nav__item> <a href=../../linters/ title=Linters class=md-nav__link> Linters </a> </li> <li class=md-nav__item> <a href=../../graphql/ title=GraphQL class=md-nav__link> GraphQL </a> </li> <li class=md-nav__item> <a href=../../redux-saga/ title="Redux saga" class=md-nav__link> Redux saga </a> </li> <li class=md-nav__item> <a href=../ title=RxJS class=md-nav__link> RxJS </a> </li> <li class=md-nav__item> <a href=../../typescript/ title=Typescript class=md-nav__link> Typescript </a> </li> <li class=md-nav__item> <a href=../../web-security/ title="Web security" class=md-nav__link> Web security </a> </li> <li class=md-nav__item> <a href=../../react-native/ title="React native" class=md-nav__link> React native </a> </li> <li class=md-nav__item> <a href=../../rust/ title=Rust class=md-nav__link> Rust </a> </li> <li class=md-nav__item> <a href=../../python/ title=Python class=md-nav__link> Python </a> </li> <li class=md-nav__item> <a href=../../php/ title=PHP class=md-nav__link> PHP </a> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary"> <label class=md-nav__title for=__toc>Table of contents</label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=#components-of-stream class=md-nav__link> Components of stream </a> <nav class=md-nav> <ul class=md-nav__list> <li class=md-nav__item> <a href=#producer-124-subject-124-observables class=md-nav__link> Producer | Subject | Observables </a> </li> <li class=md-nav__item> <a href=#consumer-124-observer-124-subscriber class=md-nav__link> Consumer | Observer | Subscriber </a> </li> <li class=md-nav__item> <a href=#data-pipeline-124-operators class=md-nav__link> Data pipeline | Operators </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#rxobservable class=md-nav__link> Rx.Observable </a> </li> <li class=md-nav__item> <a href=#when-to-use class=md-nav__link> When to use </a> <nav class=md-nav> <ul class=md-nav__list> <li class=md-nav__item> <a href=#different-type-of-data-sources class=md-nav__link> Different type of data sources. </a> <nav class=md-nav> <ul class=md-nav__list> <li class=md-nav__item> <a href=#single-value-synchronous class=md-nav__link> SINGLE-VALUE, SYNCHRONOUS </a> </li> <li class=md-nav__item> <a href=#multi-value-synchronous class=md-nav__link> MULTI-VALUE, SYNCHRONOUS </a> </li> <li class=md-nav__item> <a href=#single-value-asynchronous class=md-nav__link> SINGLE-VALUE, ASYNCHRONOUS </a> </li> <li class=md-nav__item> <a href=#multi-value-asynchronous class=md-nav__link> MULTI-VALUE, ASYNCHRONOUS </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#to-push-or-not-to-push class=md-nav__link> To push or not to push </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#consuming-data-with-observer-124-subscriber class=md-nav__link> Consuming data with observer | subscriber </a> </li> <li class=md-nav__item> <a href=#lazy-allocation class=md-nav__link> Lazy allocation </a> </li> <li class=md-nav__item> <a href=#hot-vs-cold-observables class=md-nav__link> Hot vs Cold observables </a> <nav class=md-nav> <ul class=md-nav__list> <li class=md-nav__item> <a href=#cold class=md-nav__link> Cold </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#hot class=md-nav__link> Hot </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content> <article class="md-content__inner md-typeset"> <a href=https://github.com/abhaydgarg/Notebook/tree/master/src/rxjs/rxjs.md title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a> <h1 id=rxjs>RXJS<a class=headerlink href=#rxjs title="Permanent link">&para;</a></h1> <p>Everything is stream in rxjs and a stream is nothing more than a sequence of events over time. The concept of a stream can be applied to any data point that holds a value; this ranges from a single integer to bytes of data received from a remote HTTP call.</p> <h2 id=components-of-stream>Components of stream<a class=headerlink href=#components-of-stream title="Permanent link">&para;</a></h2> <h3 id=producer-124-subject-124-observables>Producer | Subject | Observables<a class=headerlink href=#producer-124-subject-124-observables title="Permanent link">&para;</a></h3> <p>Producers are the sources of your data. A stream must always have a producer of data, which will be the starting point for any logic that you’ll perform in RxJS. In practice, a producer is created from something that generates events independently (anything from a single value, an array, mouse clicks, to a stream of bytes read from a file). The observer pattern defines producers as the subject; in RxJS, we call them observables, as in something that’s able to be observed.</p> <blockquote> <p>Observables are like fire and forget. They emit event and do not process it.</p> </blockquote> <h3 id=consumer-124-observer-124-subscriber>Consumer | Observer | Subscriber<a class=headerlink href=#consumer-124-observer-124-subscriber title="Permanent link">&para;</a></h3> <p>You must also have a consumer to accept events from the producer and process them in some specific way. When the consumer begins listening to the producer for events to consume, you now have a stream, and it’s at this point that the stream begins to push events; we’ll refer to a consumer as an observer. Streams travel only from the producer to the consumer, not the other way around.</p> <h3 id=data-pipeline-124-operators>Data pipeline | Operators<a class=headerlink href=#data-pipeline-124-operators title="Permanent link">&para;</a></h3> <p>One advantage of RxJS is that you can manipulate or edit the data as it passes from the producer to the consumer. This is where the list of methods (known as observable operators) comes into play.</p> <p><img alt=rxjs-components src=../assets/rxjs-components.png></p> <h2 id=rxobservable>Rx.Observable<a class=headerlink href=#rxobservable title="Permanent link">&para;</a></h2> <p>Wrap data source either array, integer, object or result from HTTP request and create a stream for you. It’s simply a data type that wraps a given data source, present in memory like an array or eventually in the future from HTTP request, and allows you to chain operations onto it by invoking observable instance methods sequentially.</p> <p><img alt=rxjs-observables src=../assets/rxjs-observables.png></p> <h2 id=when-to-use>When to use<a class=headerlink href=#when-to-use title="Permanent link">&para;</a></h2> <h3 id=different-type-of-data-sources>Different type of data sources.<a class=headerlink href=#different-type-of-data-sources title="Permanent link">&para;</a></h3> <p><img alt=rxjs-datasources src=../assets/rxjs-datasources.png></p> <h4 id=single-value-synchronous>SINGLE-VALUE, SYNCHRONOUS<a class=headerlink href=#single-value-synchronous title="Permanent link">&para;</a></h4> <p>The simplest case is that you have only a single piece of data. In programming, you know there are operations that return a single value for each invocation. This is the category of any function that returns a single object. You can use the <code>Rx.Observable .of()</code> function to wrap a single, synchronous value. <strong>As soon as the subscriber is attached, the value is emitted.</strong></p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=nx>Rx</span><span class=p>.</span><span class=nx>Observable</span><span class=p>.</span><span class=k>of</span><span class=p>(</span><span class=mi>42</span><span class=p>).</span><span class=nx>subscribe</span><span class=p>(</span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>);</span> <span class=c1>//-&gt; 42</span>
+</pre></div> </td></tr></table> <h4 id=multi-value-synchronous>MULTI-VALUE, SYNCHRONOUS<a class=headerlink href=#multi-value-synchronous title="Permanent link">&para;</a></h4> <p>You can also group single items together to form collections of data, mainly for arrays. In order to apply the same operation that you used on the single item on all of the items, you would traditionally iterate over the collection and repeatedly apply the same operation to each item in the collection. <strong>As soon as the subscriber is attached, the value is emitted.</strong></p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=nx>Rx</span><span class=p>.</span><span class=nx>Observable</span><span class=p>.</span><span class=nx>from</span><span class=p>([</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>]).</span><span class=nx>subscribe</span><span class=p>(</span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>);</span>
+<span class=c1>// -&gt; 1 2 3</span>
+</pre></div> </td></tr></table> <h4 id=single-value-asynchronous>SINGLE-VALUE, ASYNCHRONOUS<a class=headerlink href=#single-value-asynchronous title="Permanent link">&para;</a></h4> <p>This kind of operation is usually used to load some remote resource via an AJAX call or wait on the result of some non-local calculation wrapped in a Promise, without blocking the application. In either case, after the operation is initiated, it will expect a single return value or an error. In JavaScript this case is often handled using Promises. A Promise is similar to the single-value data case in that it resolves or errors only once. RxJS has methods to seamlessly integrate with Promises.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>fortyTwo</span> <span class=o>=</span> <span class=k>new</span> <span class=nb>Promise</span><span class=p>((</span><span class=nx>resolve</span><span class=p>,</span> <span class=nx>reject</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+   <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+      <span class=nx>resolve</span><span class=p>(</span><span class=mi>42</span><span class=p>);</span>
+   <span class=p>},</span> <span class=mi>5000</span><span class=p>);</span>
+<span class=p>});</span>
+
+<span class=nx>Rx</span><span class=p>.</span><span class=nx>Observable</span><span class=p>.</span><span class=nx>fromPromise</span><span class=p>(</span><span class=nx>fortyTwo</span><span class=p>)</span>
+   <span class=p>.</span><span class=nx>map</span><span class=p>(</span><span class=nx>increment</span><span class=p>)</span>
+   <span class=p>.</span><span class=nx>subscribe</span><span class=p>(</span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>);</span> <span class=c1>//-&gt; 43</span>
+
+<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;Program terminated&#39;</span><span class=p>);</span>
+
+<span class=c1>// # output</span>
+<span class=s1>&#39;Program terminated&#39;</span>
+<span class=mi>43</span> <span class=c1>//-&gt; after 5 seconds elapse</span>
+</pre></div> </td></tr></table> <h4 id=multi-value-asynchronous>MULTI-VALUE, ASYNCHRONOUS<a class=headerlink href=#multi-value-asynchronous title="Permanent link">&para;</a></h4> <p>The tasks in the fourth group are those that will produce multiple values over time, yet do so asynchronously. You create this category especially for the DOM events, which are all asynchronous and can occur infinitely many times.</p> <p><img alt=rxjs-multivalue-async src=../assets/rxjs-multivalue-async.png></p> <h3 id=to-push-or-not-to-push>To push or not to push<a class=headerlink href=#to-push-or-not-to-push title="Permanent link">&para;</a></h3> <p><img alt=rxjs-push-pull src=../assets/rxjs-push-pull.png></p> <blockquote> <p>Notice the positions of the consumer and the direction of the data. In pull-based semantics, the consumer requests data (iterators work this way), whereas in pushed-based semantics, data is sent from the source to the consumer without it requesting it. Observables work this way.</p> </blockquote> <p>Iterators use a pull-based semantic. This means that the consumer of the iterator is responsible for requesting the next item from the iterator. A pull-based paradigm is useful in cases where you know that a value can be returned immediately from a computation. But in scenarios like listening for a mouse click, where the consumer has no way of knowing when the next piece of data will become available, this paradigm breaks down.</p> <p>In a push paradigm, the producer is responsible for creating the next item, whereas the consumer only listens for new events. As an example of this, consider your phone’s email client. A pull-based mechanism that checks for new email every second can drain the resources of your mobile device quickly, whereas with push email, or any push notifications for that matter, your email client needs to react to any incoming messages only once.</p> <p>RxJS observables use push-based notifications, which means they don’t request data; rather, data is pushed onto them so that they can react to it.</p> <h2 id=consuming-data-with-observer-124-subscriber>Consuming data with observer | subscriber<a class=headerlink href=#consuming-data-with-observer-124-subscriber title="Permanent link">&para;</a></h2> <p>Every piece of data that’s emitted and processed through an observable needs a destination. In other words, what was the purpose of capturing and processing a certain event?</p> <p>The result of calling <code>subscribe()</code> on an observable source is a Subscription object.</p> <p>An observable becomes aware of an observer during the subscription process, which you’ve seen a lot of so far. The subscription process is a way for you to pass an observer reference into an observable, creating a managed, one-way relationship.</p> <blockquote> <p><strong>An important point</strong> to remember when dealing with RxJS is that the lifetime of a stream doesn’t start with the creation of an observable. It begins when it’s subscribed to.</p> </blockquote> <h2 id=lazy-allocation>Lazy allocation<a class=headerlink href=#lazy-allocation title="Permanent link">&para;</a></h2> <p>In computing terms, an object that creates data only when needed is known as a lazy data source. This is in sharp contrast to JavaScript, which has strict eager evaluation. The terms lazy and eager refer to when an application requests memory from the system and how much it requests up front. Lazy allocation is always done when the space is actually needed (or on demand), whereas eager allocation is performed up front as soon as the object is scoped. In the eager scheme, there’s an up-front cost to allocation and there exists the possibility that you’ll overallocate because you don’t know how much space will be used. Lazy allocation, on the other hand, waits until the space is needed and pays the penalty for allocation at runtime. This allows frameworks to be really smart and avoid overallocating space in certain situations. To illustrate the difference, we’ll show you how a popular JavaScript array method, slice(), would work under eager and lazy evaluation. Consider a function called range(start, end), which generates an array of numbers from start to end. Generating an infinite number of elements and taking the first five would look like:</p> <p><img alt=rxjs-eager-allocation src=../assets/rxjs-eager-allocation.png></p> <p>In an eager allocation scheme, the program halts before it can execute the slice(5) function because it runs out of memory.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=nx>range</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=nb>Number</span><span class=p>.</span><span class=nx>POSITIVE_INFINITY</span><span class=p>).</span><span class=nx>slice</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>5</span><span class=p>);</span> <span class=c1>//-&gt; Browser halts</span>
+</pre></div> </td></tr></table> <p>In other words, eager evaluation means executing each portion of an expression fully before moving on to the next. On the other hand, if JavaScript functions were lazy, then this code would only need to generate the first five elements. In a lazy allocation scheme, the runtime waits until the result of this expression is needed and only then runs it through the program, allocating only the resources it needs to request.</p> <p><strong>In RxJS, the strategy is precisely this: wait until a subscriber subscribes to the observable expression, and then begin to initialize any required data structures.</strong></p> <p>RxJS avoids premature allocation of data in two ways. The first, is the use of a lazy subscription mechanism. The second is that an observable pushes data or drop or remove from memory as soon as the event is emitted instead of holding it statically in memory.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=c1>// This interval will keep on emitting events every 500 milliseconds until something stops it.</span>
+<span class=kr>const</span> <span class=nx>source$</span> <span class=o>=</span> <span class=nx>Rx</span><span class=p>.</span><span class=nx>Observable</span><span class=p>.</span><span class=nx>create</span><span class=p>(</span><span class=nx>observer</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=kd>let</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+  <span class=nx>setInterval</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=nx>observer</span><span class=p>.</span><span class=nx>next</span><span class=p>(</span><span class=nx>i</span><span class=o>++</span><span class=p>);</span>
+<span class=p>},</span> <span class=mi>500</span><span class=p>);</span> <span class=p>});</span>
+</pre></div> </td></tr></table> <p>First memory is allocated for observable instance. To activate <code>source$</code>, an observer must first subscribe to it via<code>subscribe()</code>. A call to subscribe will take the observable out of its dormant state and inform it that it can begin producing.</p> <p>The advantage to a lazy subscription is that the observable doesn’t hold onto data by default. In the previous example, each event generated by the interval will be processed and then dropped. This is what we mean when we say that the observable is streaming in nature rather than pooled. This discard-by-default semantic means that you never have to worry about unbounded memory growth sneaking up on you, causing memory leaks.</p> <h2 id=hot-vs-cold-observables>Hot vs Cold observables<a class=headerlink href=#hot-vs-cold-observables title="Permanent link">&para;</a></h2> <h3 id=cold>Cold<a class=headerlink href=#cold title="Permanent link">&para;</a></h3> <p>Cold observables start running upon subscription, i.e., the observable sequence only starts pushing values to the observers when Subscribe is called. In other words each subscriber receive their own independent copy of all the events pushed through them.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>obsv</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Observable</span><span class=p>(</span><span class=nx>observer</span> <span class=p>=&gt;</span> <span class=p>{</span>
+
+  <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=nx>observer</span><span class=p>.</span><span class=nx>next</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+  <span class=p>},</span> <span class=mi>1000</span><span class=p>);</span>
+
+  <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=nx>observer</span><span class=p>.</span><span class=nx>next</span><span class=p>(</span><span class=mi>2</span><span class=p>);</span>
+  <span class=p>},</span> <span class=mi>2000</span><span class=p>);</span>
+
+  <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=nx>observer</span><span class=p>.</span><span class=nx>next</span><span class=p>(</span><span class=mi>3</span><span class=p>);</span>
+  <span class=p>},</span> <span class=mi>3000</span><span class=p>);</span>
+
+  <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=nx>observer</span><span class=p>.</span><span class=nx>next</span><span class=p>(</span><span class=mi>4</span><span class=p>);</span>
+  <span class=p>},</span> <span class=mi>4000</span><span class=p>);</span>
+
+<span class=p>});</span>
+
+<span class=c1>// Subscription A</span>
+<span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=nx>obsv</span><span class=p>.</span><span class=nx>subscribe</span><span class=p>(</span><span class=nx>value</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>value</span><span class=p>));</span>
+<span class=p>},</span> <span class=mi>0</span><span class=p>);</span>
+
+<span class=c1>// Subscription B</span>
+<span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=nx>obsv</span><span class=p>.</span><span class=nx>subscribe</span><span class=p>(</span><span class=nx>value</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`&gt;&gt;&gt;&gt; </span><span class=si>${</span><span class=nx>value</span><span class=si>}</span><span class=sb>`</span><span class=p>));</span>
+<span class=p>},</span> <span class=mi>2500</span><span class=p>);</span>
+
+<span class=c1>// output</span>
+
+ <span class=nx>A</span>     <span class=nx>B</span><span class=p>(</span><span class=nx>after</span> <span class=mi>2500</span><span class=nx>ms</span><span class=p>)</span>
+ <span class=mi>1</span>
+ <span class=mi>2</span>
+ <span class=mi>3</span>
+ <span class=mi>4</span>      <span class=mi>1</span>
+        <span class=mi>2</span>
+        <span class=mi>3</span>
+        <span class=mi>4</span>
+</pre></div> </td></tr></table> <p>In the above case subscriber B subscribes 2000ms after subscriber A. Yet subscriber B is starting to get values like subscriber A.</p> <h2 id=hot>Hot<a class=headerlink href=#hot title="Permanent link">&para;</a></h2> <p>Hot observables such as mouse move events which are already producing values even before a subscription is active. No matter if you call subscribe, hot observables start running.</p> <p>When we subscribe to such a hot Observable, subscribers do not see past values but only new ones that were generated after our subscription.</p> <p>A typical example of a hot observable are mousemove events. The mouse moves happen regardless if someone is listening or not. When we start listening for them, we only get future events.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>obsv</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Observable</span><span class=p>(</span><span class=nx>observer</span> <span class=p>=&gt;</span> <span class=p>{</span>
+
+  <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=nx>observer</span><span class=p>.</span><span class=nx>next</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+  <span class=p>},</span> <span class=mi>1000</span><span class=p>);</span>
+
+  <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=nx>observer</span><span class=p>.</span><span class=nx>next</span><span class=p>(</span><span class=mi>2</span><span class=p>);</span>
+  <span class=p>},</span> <span class=mi>2000</span><span class=p>);</span>
+
+  <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=nx>observer</span><span class=p>.</span><span class=nx>next</span><span class=p>(</span><span class=mi>3</span><span class=p>);</span>
+  <span class=p>},</span> <span class=mi>3000</span><span class=p>);</span>
+
+  <span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=nx>observer</span><span class=p>.</span><span class=nx>next</span><span class=p>(</span><span class=mi>4</span><span class=p>);</span>
+  <span class=p>},</span> <span class=mi>4000</span><span class=p>);</span>
+
+<span class=p>}).</span><span class=nx>publish</span><span class=p>();</span>
+
+<span class=nx>obsv</span><span class=p>.</span><span class=nx>connect</span><span class=p>();</span>
+
+<span class=c1>// Subscription A</span>
+<span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=nx>obsv</span><span class=p>.</span><span class=nx>subscribe</span><span class=p>(</span><span class=nx>value</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>value</span><span class=p>));</span>
+<span class=p>},</span> <span class=mi>0</span><span class=p>);</span>
+
+<span class=c1>// Subscription B</span>
+<span class=nx>setTimeout</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=nx>obsv</span><span class=p>.</span><span class=nx>subscribe</span><span class=p>(</span><span class=nx>value</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`      </span><span class=si>${</span><span class=nx>value</span><span class=si>}</span><span class=sb>`</span><span class=p>));</span>
+<span class=p>},</span> <span class=mi>2500</span><span class=p>);</span>
+
+<span class=c1>// output</span>
+
+<span class=nx>A</span>      <span class=nx>B</span>
+<span class=mi>1</span>
+<span class=mi>2</span>
+<span class=mi>3</span>
+       <span class=mi>3</span>
+<span class=mi>4</span>
+       <span class=mi>4</span>
+</pre></div> </td></tr></table> <p>In the case above, the live performance starts at 1000ms, subscriber A arrived to the concert hall at 0s to get a good seat and our subscriber B arrived at the performance at 2500ms and missed a bunch of songs.</p> </article> </div> </div> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-footer-copyright> <div class=md-footer-copyright__highlight> Abhay Garg </div> powered by <a href=https://www.mkdocs.org>MkDocs</a> and <a href=https://squidfunk.github.io/mkdocs-material/ > Material for MkDocs</a> </div> </div> </div> </footer> </div> <script src=../../assets/javascripts/application.c648116f.js></script> <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script> <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script> </body> </html>

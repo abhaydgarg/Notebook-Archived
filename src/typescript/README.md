@@ -1,0 +1,18 @@
+# TOC
+
+- [Typescript](typescript.md)
+- [Basic types](basic-types.md)
+- [Type assertion](type-assertion.md)
+- [Interfaces](interfaces.md)
+- [Classes](classes.md)
+- [Functions](functions.md)
+- [Generic](generic.md)
+- [Type inference](type-inference.md)
+- [Advance types](advance-types.md)
+- [Type gaurd](type-gaurd.md)
+- [Type aliases](type-aliases.md)
+- [Discriminated union](discriminated-union.md)
+- [Namespaces](namespaces.md)
+- [Modules](modules.md)
+- [Declaration file](declaration-file.md)
+- [Class as type](class-as-type.md)
