@@ -172,7 +172,7 @@ Two types of props in comp. And the approach for each type should be:
 2. Avoid Typescript linter warning. It complains if it detects the prop which is there in the comp just to pass down to child but not defined.
 3. Since we are handling `isRequired` check for own props. React will not warn multiple times. Just one warn message from comp which own the prop.
 
-#### Drawback
+#### Drawbacks
 
 1. Multiple warnings on mismatch type. So basically, if some comp is down in the hierarchy has type mismatch then all parents from where the prop is being passed down will also complain about the mismatch type. So you will see multiple warm messages on your screen. This is a trade-off you get when you want to achive the documentation benefit.
 2. Props boilerplate.
@@ -182,3 +182,27 @@ Two types of props in comp. And the approach for each type should be:
 
 !!! info "End Note"
     PropTypes does not work in production - so you have to worry about checking for props that can cause WSOD. And PropTypes is there for documenting comp and make a developer life easier.
+
+## Can I not use PropTypes?
+
+Yes, it is not neccessary to use PropTypes. The only thing that you miss is comp documentation and developer may have hard time figuring out the props that comp is using and their types.
+
+If you do the check for props that can cause WSOD then we do not need it. Because this is what matters in production.
+
+## PropTypes vs Typescript
+
+PropTypes help to check props at the runtime when you have data coming from API or other source and there is a possibility that data from API can have different types as compare to props type in comp.
+
+Typescript does not do the runtime check. It helps the developer by checking the props at compile time.
+
+### Which one to use
+
+Again - the purpose - documentation and early warning system for developer.
+
+**If you are not using Typescript** in your app then you should use PropTypes. So you, when later visit your comp and other developer when look into your comp then you and other developer can know about comp props and their types quickly and without a hasssle.
+
+**If you are using Typescript** in your app then do not use PropTypes. Use Typescript instead, because in Typescript you create a type definition file for your comp which tells you and other developer about the props and their types. It serves the purpose of documentation and warn developer about mismatch at compile time too.
+
+!!! question "What about runtime check (API data) when we use Typescript"
+    1. You do type checking for those props at the comp level which can cause WSOD or other errors. So there is no need to have another layer of PropTypes to check the types.
+    2. You can create a transform function (Adapter) which check and transform the data to match your props type.
