@@ -40,23 +40,23 @@ extra_javascript:
 nav:
   - CS: computer-science/README.md
   - Parser: parser/README.md
-  - Data structure and algorithms: data-structure-and-algorithms/README.md
+  - Data Structure and Algorithms: data-structure-and-algorithms/README.md
   - OOPS: oops/README.md
-  - Design patterns: design-patterns/README.md
+  - Design Patterns: design-patterns/README.md
   - Regex: regex/README.md
   - GIT: git/README.md
   - CSS: css/README.md
+  - Linters: linters/README.md
+  - Javascript: javascript/README.md
+  - Typescript: typescript/README.md
+  - Node.js: nodejs/README.md
+  - React: react/README.md
+  - React Native: react-native/README.md
+  - Redux Saga: redux-saga/README.md
+  - Express.js: expressjs/README.md
+  - GraphQL: graphql/README.md
+  - RxJS: rxjs/README.md
   - MySQL: mysql/README.md
   - MongoDB: mongodb/README.md
-  - Javascript: javascript/README.md
-  - Node.js: nodejs/README.md
-  - Express.js: expressjs/README.md
-  - React: react/README.md
-  - Linters: linters/README.md
-  - GraphQL: graphql/README.md
-  - Redux saga: redux-saga/README.md
-  - RxJS: rxjs/README.md
-  - Typescript: typescript/README.md
-  - Web security: web-security/README.md
-  - React native: react-native/README.md
+  - Web Security: web-security/README.md
   - Rust: rust/README.md

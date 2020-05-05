@@ -1,7 +1,7 @@
 # TOC
 
 - [Conventions](conventions.md)
-- [Directory structure](directory-structure.md)
+- [File structure](file-structure.md)
 - [Component](component.md)
 - [Rules for writing component](rules-writing-component.md)
 - [setSate()](setsate.md)
@@ -12,8 +12,11 @@
 - [PropsTypes](proptypes.md)
 - [HOC](hoc.md)
 - [Render prop](render-prop.md)
+- [ref and forwardRef](ref.md)
 - [Optimization](optimization.md)
 - [Code splitting](code-splitting.md)
 - [Redux](redux.md)
 - [Immutability](immutability.md)
-- [Points to note](points-to-note.md)
+- [Passing function](passing-function.md)
+- [Call child method from parent](call-child-method-from-parent.md)
+- [Misc](misc.md)

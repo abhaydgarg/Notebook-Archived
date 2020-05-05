@@ -1,40 +1,15 @@
 # PropTypes
 
-## How to validate and check props
+> Only works on development environment.
 
-It is the responsibility of parent component to send the data down to children using props on the basis of the child's `Proptypes` rules. Let the parent validate (checking data type and value) the props of children and send appropraite props as required by children. And leave the children out from explicit validation process. In some cases, child should check the prop's value before render in order to avoid unexpected error.
-
-**Strategy:** Data transformer function or parent comp is the place to validate props and set default value of children props as expected by children comp. So that right data type is send to component. Care is taken for the props which **get the value from API response.**
-
-!!! note "Points to keep in mind"
-    1. `array`, `object` and `function` are the props that cause white screen of death. Even when checked using `PropTypes` can cause WSOD. So if you are getting `props` such as `array`, `object` from API then you should check them again such as their type and emptiness when using in comp. As far as `function` is concern you can see if checking of `function` is required or not, because if you declare a function in parent and pass it to the child comp then you can mark function required in child comp but there is no need to wrap it in `if` statement to check if it is `function` or not because it will be there always and there is no way it will be missing.
-    2. For primitive types there is no need to check because `null` and `undefined` will not be shown and ignored. Explicit type and empty check is required if say, you have a `string` and you want to apply string's built-in method. If you are just displaying then do not worry much. You can set default value though in case if `prop` is missing or `undefined`.
-    3. You cannot set a hard and fast rule for how to use `PropTypes` and which `prop` should be checked explicitly in comp before using to avoid WSOD. Figure out suitable approach for the `prop` based on how it is going to be used and where it is coming from (API or not).
-
-## propTypes
+## Why
 
 `propTypes` help document your components, which benefits future development in two ways.
 
 1. You can easily open up a component and check which props are required and what type they should be.
-2. When things get messed up, React will give you an error message in the console, saying which props are wrong/missing and the render method that caused the problem.
+2. In development env, when things get messed up, React will give you an error message in the console, saying which props are wrong/missing and the render method that caused the problem.
 
-```js
-import React, { Component, PropTypes } from 'react';
-import { render } from 'react-dom';
-
-class Greeter extends Component {
-  render() {
-    return (<h1>{this.props.salutation}</h1>)
-  }
-}
-
-// validation
-Greeter.propTypes = {
-  salutation: PropTypes.string.isRequired
-}
-```
-
-## How type checking works in propTypes
+## How it works
 
 ```js
 static propTypes = {
@@ -43,13 +18,11 @@ static propTypes = {
 }
 ```
 
-Checking done from **Right to Left**.
-
-For example in case of `num`, if `required` is present then `undefined` and `null` are not allowed and warning is generated before checking type `number` of `num`. If not `undefined` and `null` then prop types check type `number`.
-
-If `required` is not supplied then for example in case of `str` then prop types check type `string` **but** `null` and `undefined` are also allowed.
-
-**defaultProps** runs first before **propTypes** and in this way proptypes also works when value get from defaultProps. If default value is present then props receive the default value and then `isRequired` is checked. **Next**, if prop's recieved `undefined` value say from API or parent comp then default value is not replaced with `undefined` but if prop's recieve `null` value then default value is replaced with `null`. _`undefined` then default value is not replaced and `null` then default value is replaced with `null`_.
+| Right to Left checking                                                                                                                                  | defaultProps                                                                           |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| In case of `num`, `isRequired` is present. So first it check if value is `undefined` or `null`. If not then only it check if `num` is of type `number`. | `defaultProps` runs before `propTypes`, so type checking also works on default values. |
+| `null` and `undefind` are allowed if `isRequired` is not present. | If prop is missing or has a value `undefined` then default value does not change.
+| - | If prop has value `null` then default value is replaced with `null`
 
 ## Centralize propTypes
 
@@ -92,6 +65,120 @@ export default class User extends Component {
 }
 ```
 
-!!! note "Scenario - parent(index) and children comps"
-    - Mention all props in propTypes in index file (children's props too). This way, later when you visit comp, you can check all props used by comp by just looking at index file propTypes object.
-    - `isRequired` and `defaultProps` should be used in comps which actually use the prop and not just passing it to the child comp. For example, you can mention prop in index file but `isRequired` and `defaultProps` should be used in the child comp which actually use it. Because if you mention `isRequired` in index file too then you will get multiple warning one from index file propTypes and another from child propTypes comp.
+## How to handle props
+
+!!! important
+    1. `PropTypes` is just for comp documentation and to fascilitate development process.
+    2. **Write the comp by keeping the production env in mind.**
+
+### Accepted types _[whitelisting]_
+
+Whitelist instead of Blacklist. For example, through `propTypes` object, you know that `name` prop is of type `string`. So when you perform check then:
+
+```js
+// Recommended.
+if(isString(name)) {
+  return name.toUpperCase()
+}
+
+// Not recommended.
+// Condition failed if value either null
+// or undefined. So works as expected.
+// But name could be: object, array or number, then
+// it causes a WSOD.
+if(name) {
+  return name.toUpperCase()
+}
+```
+
+!!! note
+    Say, you have a prop `isSomthing` which is of type `bool` and it can be `null` too. Because you are using `null` value of prop in your comp to perform certain task. In this case, you will have three possible values `true`, `false` and `null`. Have that in mind, and perform check by using these 3 values only.
+
+### Know which prop can cause WSOD or break the comp
+
+- **Always** check prop of type `object` and `array` before use. Because, more likely you will use their built-in methods. If type is different then it will lead to WSOD.
+
+```js
+if(Array.isArray(items) && items.length > 0) {
+
+}
+```
+
+- **Primitive** type can be ignored if not using their built-in methods. For example: if you have a `name` prop of type `string` and you are just showing the value as it is, then it does not matter if it is `null`, `undefined` or `object`. React ignores the `null` and `undefined` and coerce the other types to string as in case of `object` it will show `[object][Object]`. But it will not cause WSOD.
+
+If you are doing:
+
+```js
+<Text>{name.toUpperCase()}</Text>
+```
+
+then it could cause WSOD, if `name` is not of type `string`.
+
+### Treat comp single standalone entity
+
+> Even it is a part of some comps hierarchy.
+
+Do not rely on parent comp to validate props. Do not assume that parent comp will send the right type of data. Each comp has its own responsibility to check their props types if they have possibility to cause WSOD.
+
+**Remember:** You only need to worry about those props which can cause WSOD as mentioned above.
+
+Also, take care of setting default values using `defaultProps` in own comp.
+
+!!! note "Do the checking"
+    1. Even if parent comp check the prop, child has to do again.
+    2. Even if you are not going to use the comp anywhere else in your app. Just under some parent comp and at one place only.
+
+### Data source you need to watch
+
+Data coming from **API.**
+
+#### Handling API data
+
+A few options:
+
+1. You can validate and check the API data in **transform** function.
+2. You can validate the check the API data in a function which handle API request like **saga worker** function.
+
+Validating and checking API data means that **transform the API data to match props type** if there is mismatch of type. Lets say, the `name` property is of type `string` and in API response you get value `null` or `undefined` or other type. Then you can set the default value to the `name` property, say `''` empty string _(primitive type can be `null` or `undefined` and you can avoid setting default value to them because each comp also check the prop if they can cause WSOD)_. But in the case of `object` and `array`, if they are `null` or `undefined` then set their default value to `{}` and `[]` respectively.
+
+!!! note
+    Even if you check and validate API data in transform function. Each comp has to do props checking. Do not rely on others. Because, in future, if you replace the module that consume API with third-party API consumer, exclude transform function foe some reason, or you make certain mistake in transform function logic, even then you will be assured that comp will not break due to wrong type.
+
+    There is no performance lag, if data is checked twice. One at the time, in transform function and other by comp itself. Also, comp check only those props which can cause WSOD. Remember, you are not checking millions of data twice which can pose some performance issue.
+
+### How to define props using PropTypes in nested comps
+
+Let's have a purpose of `PropTypes` be clear in mind.
+
+> Documentation and fascilitate development process. So we should choose that way which help us to achieve these two purposes and accept the trade-off like multiple warn messages etc.
+
+Two types of props in comp. And the approach for each type should be:
+
+1. Own props.
+    - Do `isRequired`.
+    - Set default value, if neccessary.
+
+2. Child props - props which just recieved by comp and simply pass down to child.
+    - Do not do `isRequired` check. Let it handle by child comp. If prop is a required prop in child then you do not make it required in parent comp. Just define its type and let child handle the required check.
+    - Do not set default value on the behalf of child comp. Let it set by child comp.
+
+!!! note
+    1. Comp should worry about and define only its own props and child props that comp is passing down to child comp.
+    2. Contextual props (props drilling): do not define the prop in intermeddiate comps. Define in the parent (index) comp which recieve the contexual prop and then define it in the child comp which uses it down in the hierarchy.
+
+#### Benefits
+
+1. If you open any comp file in hierarchy you will see all the props that comp is using. Own props and props that pass down to child. You need not to look into other files in hierarchy to have complete picture of all props that comp is using. It serves the documentation purpose well. That is at one place you get all the information about props.
+2. Avoid Typescript linter warning. It complains if it detects the prop which is there in the comp just to pass down to child but not defined.
+3. Since we are handling `isRequired` check for own props. React will not warn multiple times. Just one warn message from comp which own the prop.
+
+#### Drawback
+
+1. Multiple warnings on mismatch type. So basically, if some comp is down in the hierarchy has type mismatch then all parents from where the prop is being passed down will also complain about the mismatch type. So you will see multiple warm messages on your screen. This is a trade-off you get when you want to achive the documentation benefit.
+2. Props boilerplate.
+
+!!! note "On multiple mismatch warnings"
+    We can make use of the multiple mismatch warnings drawback in a situation where we want to know the hierarchical path of prop from top to down. We can track the prop path and know all the comps from where the prop is being passed down. All we need to do is to change the prop definition in root comp (index) and you will see the multiple mismatch type warnings from all the comps in the hierarchy from where the prop is being passed down.
+
+!!! info "End Note"
+    PropTypes does not work in production - so you have to worry about checking for props that can cause WSOD. And PropTypes is there for documenting comp and make a developer life easier.

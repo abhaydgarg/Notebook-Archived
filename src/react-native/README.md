@@ -12,4 +12,6 @@
     - [Android](publish/android.md)
     - [ios](publish/ios.md)
     - [Sync versioning](publish/sync-versioning.md)
-- [Points to note](points.md)
+- [CLI](cli.md)
+- [Platform](platform.md)
+- [Misc](misc.md)

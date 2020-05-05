@@ -1,4 +1,14 @@
-# Points to note
+# Misc
+
+## Formik - should know the way it handle form's state
+
+It uses the same pattern that you are very well familiar with, which is pass the function as prop to children. For example, you have a parent comp and function called `hello` which update the parent comp state. Now you want that the children can also have an access to `hello` function and they can also trigger state change. To do this we simply pass the `hello` function to child comp as prop `<Child onHello={hello} />`. Now child can run the `hello` using `props.hello()`.
+
+Formik uses the same pattern and let child comp to update form's state.
+
+- It provided the inerface (a set of functions) such as `setFieldValue`, `setFieldTouched`, `setError`, etc.
+- The interface is available to child comp where we create our form.
+- With the help of functions we can control the form by simply calling these functions and the tedious work of handling the state change is done by Formik automatically. All you need to do is to call the function.
 
 ## &&
 
