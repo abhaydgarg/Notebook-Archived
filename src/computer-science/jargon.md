@@ -1,5 +1,29 @@
 # Jargon
 
+## Arity
+
+It is the number of arguments that function takes.
+
+|         |                          |
+|---------|--------------------------|
+| 0-ary   | Nullary funciton         |
+| 1-ary   | Unary (Monadic) funciton |
+| 2-ary   | Binary funciton          |
+| 3-ary   | Ternary funciton         |
+| Varying | Variadic funciton        |
+
+## Predicate function
+
+> Boolean valued funciton
+
+It is a function which either returns true or false value only.
+
+## Variadic function
+
+> Function that takes indefinite numbers of arguments.
+
+It is a function of indefinite arity, i.e., one which accepts a variable number of arguments.
+
 ## Propagation
 
 ### Continuation passing style _[CPS]_
