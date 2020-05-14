@@ -25,4 +25,5 @@
     - [Rules](hook-rules.md)
     - [Custom hook](custom-hook.md)
     - [More hooks](more-hooks.md)
+    - [More about hooks](more-about-hooks.md)
 - [Misc](misc.md)

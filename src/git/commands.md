@@ -59,3 +59,9 @@ git branch -m [newName]
 git push origin :[oldName]
 git push -u origin [newName]
 ```
+
+### Update the local list of remote branches
+
+```bash
+git remote update origin --prune
+```

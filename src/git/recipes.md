@@ -35,7 +35,6 @@ git commit -m "MOB-111: shopping bag styling"
 
     ==============
 
-
 ## Undo changes in working directory
 
 **Working directory** - Changes that are not staged using `git add` yet.
