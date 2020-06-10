@@ -40,4 +40,5 @@
 - [require vs import](require-vs-import.md)
 - [Event loop](event-loop.md)
 - [JSON](json.md)
+- [Misc](misc.md)
 - [Coming features](coming-features.md)
