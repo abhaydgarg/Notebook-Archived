@@ -4,6 +4,7 @@
 - [File structure](file-structure.md)
 - [Component](component.md)
 - [Rules for writing component](rules-writing-component.md)
+- [Props checking](props-checking.md)
 - [setSate()](setsate.md)
 - [Triple dot](triple-dot.md)
 - [Composition](composition.md)
