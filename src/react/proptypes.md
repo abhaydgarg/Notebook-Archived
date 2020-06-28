@@ -4,7 +4,7 @@
 
 !!! important
     1. `PropTypes` is just for comp documentation and to fascilitate development process.
-    2. **Write the comp by keeping the production env in mind.**
+    2. Write the comp by keeping the **production env in mind.**
 
 ## Why
 
@@ -13,7 +13,9 @@
 1. You can easily open up a component and check which props are required and what type they should be.
 2. In development env, when things get messed up, React will give you an error message in the console, saying which props are wrong/missing and the render method that caused the problem.
 
-### Approach to use isRequired
+### Using isRequired
+
+> isRequired => prop cannot be `undefined` or `null`.
 
 Make those prop `isRequired`, if it is missing then comp will break.
 
@@ -99,7 +101,7 @@ Two types of props in comp. And the approach for each type should be:
 
 #### Drawbacks
 
-1. Multiple warnings on mismatch type. So basically, if some comp is down in the hierarchy has type mismatch then all parents from where the prop is being passed down will also complain about the mismatch type. So you will see multiple warm messages on your screen. This is a trade-off you get when you want to achive the documentation benefit.
+1. Multiple warnings on mismatch type. So basically, if some comp is down in the hierarchy has type mismatch then all parents from where the prop is being passed down will also complain about the mismatch type. So you will see multiple warm messages on your screen. **This is a trade-off you get when you want to achive the documentation benefit.**
 2. Props boilerplate.
 
 !!! note "Multiple mismatch warnings"
