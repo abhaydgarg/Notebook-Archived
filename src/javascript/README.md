@@ -37,8 +37,6 @@
     - [Promises](js6/promises.md)
     - [Spread and Rest operators](js6/spread-and-rest-operators.md)
     - [async/await](js6/async-await.md)
-- [require vs import](require-vs-import.md)
 - [Event loop](event-loop.md)
 - [JSON](json.md)
 - [Misc](misc.md)
-- [Coming features](coming-features.md)

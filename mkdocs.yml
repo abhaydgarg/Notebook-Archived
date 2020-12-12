@@ -46,15 +46,13 @@ nav:
   - Regex: regex/README.md
   - GIT: git/README.md
   - CSS: css/README.md
-  - Linters: linters/README.md
+  - REST API: rest-api/README.md
+  - ESLint: eslint/README.md
   - Javascript: javascript/README.md
-  - Typescript: typescript/README.md
   - Node.js: nodejs/README.md
   - React: react/README.md
   - React Native: react-native/README.md
   - Redux Saga: redux-saga/README.md
-  - Express.js: expressjs/README.md
-  - GraphQL: graphql/README.md
   - RxJS: rxjs/README.md
   - MySQL: mysql/README.md
   - MongoDB: mongodb/README.md

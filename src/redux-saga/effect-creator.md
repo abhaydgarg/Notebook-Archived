@@ -71,21 +71,9 @@ Put another way, the Generator will yield plain Objects containing instructions,
 
 Effect which suspends the generator function and wait for the result to get is called **blocking effect**, whereas effect which does not suspend generator function and move to next statement immediately is called **non blocking effect**.
 
-### put(action)
-
-> Dispatch the action **(Non blocking)**
-
-Creates an Effect description that instructs the middleware to **dispatch an action** to the Store. This effect is non-blocking and any errors that are thrown downstream (e.g. in a reducer) will not bubble back into the saga.
-
-```js
-yield put({ type: 'USER_SUCCESS_ACTION', response });
-```
-
-### put.resolve(action)
-
-> Same as `put(action)` but **Blocking**.
-
-Just like `put` but the effect is blocking (if promise is returned from dispatch it will wait for its resolution) and will bubble up errors from downstream.
+!!! Example
+    - put(action) - Non-blocking
+    - put.resolve(action) - Blocking
 
 ### take(pattern)
 
@@ -159,20 +147,6 @@ function* watcher() {
 
 Instead of a `while (true)`, we're running a `for` loop, which will iterate only three times. After taking the first three `TODO_CREATED` actions, `watchFirstThreeTodosCreation` will cause the application to display a congratulation message then terminate. This means the Generator will be garbage collected and no more observation will take place.
 
-### call(fn, ...args)
-
-> Call the function `fn` - **Blocking**
-
-Creates an Effect description that instructs the middleware to call the function `fn` with `args` as arguments.
-
-**fn:** Function - A Generator function, or normal function which either returns a Promise as result, or any other value.
-
-**args:** Array - An array of values to be passed as arguments to `fn`.
-
-If `fn` is generator function then the middleware runs it and parent Generator will be suspended until the child Generator terminates normally, in which case the parent Generator is resumed with the value returned by the child Generator. Or until the child aborts with some error, in which case an error will be thrown inside the parent Generator.
-
-If `fn` is normal function which returns Promise, the middleware will suspend the Generator until the Promise is resolved, in which case the Generator is resumed with the resolved value. or until the Promise is rejected, in which case an error is thrown inside the Generator.
-
 ### fork(fn, ...args)
 
 > Like a `call` which execute the `fn` but **Non blocking**
@@ -232,12 +206,3 @@ If you see how errors are handled in `fork` and `spawn`, you can make better cho
 In `fork` if any child task raise an error then that error is bubbled up to parent and also it teminates the execution of all other childrens. Where as in case of `spawn`, if any of the child raises an error then other children remain unaffected. It is the duty of child task to handle error on its own than bubble to parent.
 
 Based on above, you could, use `fork` for "mission critical" tasks, i.e. "if this task fails, please crash the whole app", and spawn for "not critical" tasks, i.e. "if this task fails, do not propagate the error to the parent" and let the app keep running.
-
-### cancel(task)
-
-> **Non blocking**
-
-Creates an Effect description that instructs the middleware to cancel a previously forked task.
-
-* To cancel a running task, the middleware will invoke return on the underlying Generator object. This will cancel the current Effect in the task and jump to the finally block (if defined). Inside the finally block, you can execute any cleanup logic or dispatch some action to keep the store in a consistent state (e.g. reset the state of a spinner to false when an ajax request is cancelled).
-* When cancelling a task, the middleware will also cancel the current Effect (where the task is currently blocked). If the current Effect is a call to another Saga, it will be also cancelled. When cancelling a Saga, all attached forks (sagas forked using yield fork()) will be cancelled. This means that cancellation effectively affects the whole execution tree that belongs to the cancelled task.

@@ -108,13 +108,7 @@ Speaking of clean code, leave your ego at the door and forget about writing clev
 One example of clever code is packing as much logic into one line as possible. Another example is exploiting a language’s intricacies to write strange but functional statements. Anything that might cause someone to say “Wait, what?” when poring over your code.
 
 !!! quote ""
-    Learning is a never ending process. If you enjoy the learning process then it is fun, otherwise it will be pain in ass. It empowers you in handling stuff easily, comfortably and efficiently.
-
-    Learning is a process, getting a level of expertice and skills is process. Which cannot happen overnight.
-
     Patterns - provide you a different ways to approach the problem. It let you write code in more efficient and reusable way. It is not just about programming patterns but also patterns related to library, framework, utility etc. For example `Redux patterns`, `redux saga patterns`, `react patterns`, `nodejs patterns` etc.
-
-    Code must have documentation (comprehensive), usage instruction, setup instruction, installation instruction and prerequisites. It is important so that when you come back to your own work later or anyone else take over then you and other, do not have to struggle to figure out the stuff.
 
     Do not try to solve imaginary problem, imaginary scenarios and imaginary cases. Understand the context of problem clearly. Clear understanding of problem leads to better solution.
 

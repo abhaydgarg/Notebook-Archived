@@ -14,5 +14,7 @@ deactivate
 # output installed packages in file
 pip3 freeze > requirements.txt
 # Reinstall all packages
+# Remeber to activate venv in order
+# to install the packages in locally
 pip3 install -r requirements.txt
 ```
