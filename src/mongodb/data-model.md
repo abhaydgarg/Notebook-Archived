@@ -183,9 +183,3 @@ In these relationships the "many" or child documents always appear with or are v
   ]
  }
 ```
-
-## How big the document can be
-
-Single row or single object in a collection of array.
-
-> **16MB limit for the MongoDB document.**

@@ -56,5 +56,6 @@ nav:
   - RxJS: rxjs/README.md
   - MySQL: mysql/README.md
   - MongoDB: mongodb/README.md
+  - Firebase: firebase/README.md
   - Web Security: web-security/README.md
   - Rust: rust/README.md

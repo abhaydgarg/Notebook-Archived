@@ -1,16 +1,13 @@
 # TOC
 
 - [Introduction](Introduction.md)
-- [Schema design](schema-design.md)
+- [Best practices for data structure](schema-design.md)
 - [Data model](data-model.md)
 - [Data types](data-types.md)
 - [Naming rules](naming-rules.md)
-- [Data manipulation](data-manipulation.md)
-- [GridFS](gridfs.md)
 - [Replication](replication.md)
 - [Sharding](sharding.md)
 - [Journalling](journaling.md)
 - [Aggregation](aggregation.md)
-- [Analyse query](analyse-query.md)
 - [Atomic operation](atomic-operation.md)
 - [Points to note](point-to-note.md)
