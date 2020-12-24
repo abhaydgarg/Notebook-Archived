@@ -87,12 +87,6 @@ For example in the online store, we have ‘users’ and ‘orders’. Orders al
 - **4xx: Client Error** - This category of error status codes points the finger at clients.
 - **5xx: Server Error** - The server takes responsibility for these error status codes.
 
-## Use standard HTTP error code to inform client about error
-
-Always send already existed http error to client. For example, validation failed can be sent with status code Bad Request (400) and say during establishing DB connection or reading file.
-
-If any error occurred then you should never send error message to client that DB connection is failed. Just send http error 500 to client. And internally you can use watchdog that will log errors to DB or file for developer to check.
-
 ## JSON must be well-formed
 
 [Guidelines](https://abhaydgarg.github.io/Notebook/javascript/json/)
@@ -104,3 +98,78 @@ If any error occurred then you should never send error message to client that DB
 - Last-Modified should be used in responses -  Clients and cache intermediaries may rely on header to determine the freshness of their local copies of a resource’s state representation.
 - ETag should be used in responses.
 - Cache-Control, Expires, and Date response headers should be used to encourage caching.
+
+## Use standard HTTP error code to inform client about error
+
+Always send already existed http error to client. For example, validation failed can be sent with status code Bad Request (400) and say during establishing DB connection or reading file.
+
+If any error occurred then you should never send error message to client that DB connection is failed. Just send http error 500 to client. And internally you can use watchdog that will log errors to DB or file for developer to check.
+
+### Error Response
+
+```js
+{
+  statusCode: "Number"   // the http status code
+  error: "String"        // the http error message
+  message: "String"      // the user error message
+}
+
+// Example.
+{
+  statusCode: 400
+  error: "Bad Request"
+  message: "body.id is required parameter."
+}
+```
+
+## Success HTTP Status Code for CRUD Operations
+
+### GET: 200
+
+### POST: 201
+
+> Set location header of created resource.
+
+```
+HTTP/1.1  201
+Location: /v1/items/12
+
+{
+  "message": "The item has been created successfully."
+}
+```
+
+### PUT: 200/204
+
+- **200:** If updated entity is to be sent after the update.
+
+```
+HTTP/1.1  200
+
+{
+  "id": 10,
+  "name": "shirt",
+  "color": "red",
+  "price": "$23"
+}
+```
+
+- **204:** If updated entity is not to be sent after the update.
+
+```
+HTTP/1.1  204
+
+{
+  "message": "The item has been updated successfully."
+}
+```
+
+### DELETE: 204
+
+```
+HTTP/1.1  204
+
+{
+  "message": "The item has been deleted successfully."
+}
+```
