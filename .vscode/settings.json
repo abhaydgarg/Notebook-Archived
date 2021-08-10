@@ -1,0 +1,13 @@
+{
+  "markdownlint.config": {
+    "MD026": false, // Trailing punctuation in heading.
+    "MD040": false, // Fenced code blocks should have a language specified.
+    "MD028": false, // Blank line inside blockquote.
+    "MD024": false, // Multiple headings with the same content.
+    "MD046": false, // Different code block styles are used in the same document.
+    "MD041": false, // First line in file should be a top level heading.
+    "MD007": {
+      "indent": 4 // Unorder sub-list indentation.
+    }
+  }
+}

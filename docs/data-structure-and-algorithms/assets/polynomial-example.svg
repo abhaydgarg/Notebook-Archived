@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Copyright 2017 mathsisfun.com -->
+<svg xmlns="http://www.w3.org/2000/svg" width="197.1" height="96.9" version="1.1">
+<defs/>
+<g transform="translate(352.56412,49.130074)">
+<rect x="-352.6" y="-49.1" rx="9.1" ry="12" width="197.1" height="50.5" style="color:black; overflow:visible; opacity:0.33; fill:#f0f0c0; stroke-width:2.5;"/>
+<text x="-331.1" y="-16.4" style="font-family:'Comic Sans MS'; font-size:24px; color:black; overflow:visible; fill:#5c3566; stroke-width:1px;">4xy &#160; + 3x - 5</text>
+<text x="-288.7" y="-26" style="font-family:'Comic Sans MS'; font-size:16.8px; color:black; overflow:visible; fill:#5c3566; stroke-width:1px;">2</text>
+<path style="fill:#c4a000; fill-opacity:0.75; stroke:#c4a000; stroke-width:1.2;" d="m -334.9,-4 52.3,0"/>
+<path style="fill:#c4a000; fill-opacity:0.75; stroke:#c4a000; stroke-width:1.2;" d="m -252.4,-4 27.7,0"/>
+<path style="fill:#c4a000; fill-opacity:0.75; stroke:#c4a000; stroke-width:1.2;" d="m -200.6,-4 25.1,0"/>
+<text x="-262.2" y="46.2" style="font-family:'Comic Sans MS'; font-size:21.6px; overflow:visible; fill:#c4a000; stroke:#c4a000; stroke-width:0.6px;">terms</text>
+<path style="fill:#c4a000; fill-opacity:0.75; stroke:#c4a000; stroke-width:1.2;" d="m -302.8,-3.3 58,31.3"/>
+<path style="fill:#c4a000; fill-opacity:0.75; stroke:#c4a000; stroke-width:1.2;" d="m -235.5,-4 0.7,31.5"/>
+<path style="fill:#c4a000; fill-opacity:0.75; stroke:#c4a000; stroke-width:1.2;" d="M -188.8,-3.7 -221.2,26.6"/>
+</g>
+</svg>

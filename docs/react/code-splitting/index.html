@@ -1,0 +1,226 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=description content="Notebook collections"><link href=https://abhaydgarg.github.io/Notebook/index.html/react/code-splitting/ rel=canonical><meta name=author content="Abhay Garg"><meta name=lang:clipboard.copy content="Copy to clipboard"><meta name=lang:clipboard.copied content="Copied to clipboard"><meta name=lang:search.language content=en><meta name=lang:search.pipeline.stopwords content=True><meta name=lang:search.pipeline.trimmer content=True><meta name=lang:search.result.none content="No matching documents"><meta name=lang:search.result.one content="1 matching document"><meta name=lang:search.result.other content="# matching documents"><meta name=lang:search.tokenizer content=[\s\-]+><link rel="shortcut icon" href=../../assets/images/favicon.png><meta name=generator content="mkdocs-1.0.4, mkdocs-material-4.4.2"><title>Code splitting - Notebook</title><link rel=stylesheet href=../../assets/stylesheets/application.30686662.css><link rel=stylesheet href=../../assets/stylesheets/application-palette.a8b3c06d.css><meta name=theme-color content=#2196f3><script src=../../assets/javascripts/modernizr.74668098.js></script><link href=https://fonts.gstatic.com rel=preconnect crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono&display=fallback"><style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style><link rel=stylesheet href=../../assets/fonts/material-icons.css></head> <body dir=ltr data-md-color-primary=blue data-md-color-accent=blue> <svg class=md-svg> <defs> <svg xmlns=http://www.w3.org/2000/svg width=416 height=448 viewbox="0 0 416 448" id=__github><path fill=currentColor d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg> </defs> </svg> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay data-md-component=overlay for=__drawer></label> <a href=#code-splitting tabindex=1 class=md-skip> Skip to content </a> <header class=md-header data-md-component=header> <nav class="md-header-nav md-grid"> <div class=md-flex> <div class="md-flex__cell md-flex__cell--shrink"> <a href=https://abhaydgarg.github.io/Notebook/index.html title=Notebook class="md-header-nav__button md-logo"> <i class=md-icon></i> </a> </div> <div class="md-flex__cell md-flex__cell--shrink"> <label class="md-icon md-icon--menu md-header-nav__button" for=__drawer></label> </div> <div class="md-flex__cell md-flex__cell--stretch"> <div class="md-flex__ellipsis md-header-nav__title" data-md-component=title> <span class=md-header-nav__topic> Notebook </span> <span class=md-header-nav__topic> Code splitting </span> </div> </div> <div class="md-flex__cell md-flex__cell--shrink"> </div> <div class="md-flex__cell md-flex__cell--shrink"> <div class=md-header-nav__source> <a href=https://github.com/abhaydgarg/Notebook/ title="Go to repository" class=md-source data-md-source=github> <div class=md-source__icon> <svg viewbox="0 0 24 24" width=24 height=24> <use xlink:href=#__github width=24 height=24></use> </svg> </div> <div class=md-source__repository> GitHub </div> </a> </div> </div> </div> </nav> </header> <div class=md-container> <main class=md-main role=main> <div class="md-main__inner md-grid" data-md-component=container> <div class="md-sidebar md-sidebar--primary" data-md-component=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary" data-md-level=0> <label class="md-nav__title md-nav__title--site" for=__drawer> <a href=https://abhaydgarg.github.io/Notebook/index.html title=Notebook class="md-nav__button md-logo"> <i class=md-icon></i> </a> Notebook </label> <div class=md-nav__source> <a href=https://github.com/abhaydgarg/Notebook/ title="Go to repository" class=md-source data-md-source=github> <div class=md-source__icon> <svg viewbox="0 0 24 24" width=24 height=24> <use xlink:href=#__github width=24 height=24></use> </svg> </div> <div class=md-source__repository> GitHub </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../computer-science/ title=CS class=md-nav__link> CS </a> </li> <li class=md-nav__item> <a href=../../parser/ title=Parser class=md-nav__link> Parser </a> </li> <li class=md-nav__item> <a href=../../data-structure-and-algorithms/ title="Data Structure and Algorithms" class=md-nav__link> Data Structure and Algorithms </a> </li> <li class=md-nav__item> <a href=../../oops/ title=OOPS class=md-nav__link> OOPS </a> </li> <li class=md-nav__item> <a href=../../design-patterns/ title="Design Patterns" class=md-nav__link> Design Patterns </a> </li> <li class=md-nav__item> <a href=../../regex/ title=Regex class=md-nav__link> Regex </a> </li> <li class=md-nav__item> <a href=../../git/ title=GIT class=md-nav__link> GIT </a> </li> <li class=md-nav__item> <a href=../../css/ title=CSS class=md-nav__link> CSS </a> </li> <li class=md-nav__item> <a href=../../rest-api/ title="REST API" class=md-nav__link> REST API </a> </li> <li class=md-nav__item> <a href=../../javascript/ title=Javascript class=md-nav__link> Javascript </a> </li> <li class=md-nav__item> <a href=../../nodejs/ title=Node.js class=md-nav__link> Node.js </a> </li> <li class=md-nav__item> <a href=../../npm/ title=NPM class=md-nav__link> NPM </a> </li> <li class=md-nav__item> <a href=../../redux/ title=Redux class=md-nav__link> Redux </a> </li> <li class=md-nav__item> <a href=../ title=React class=md-nav__link> React </a> </li> <li class=md-nav__item> <a href=../../react-native/ title="React Native" class=md-nav__link> React Native </a> </li> <li class=md-nav__item> <a href=../../mongodb/ title=MongoDB class=md-nav__link> MongoDB </a> </li> <li class=md-nav__item> <a href=../../web-security/ title="Web Security" class=md-nav__link> Web Security </a> </li> <li class=md-nav__item> <a href=../../rust/ title=Rust class=md-nav__link> Rust </a> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary"> <label class=md-nav__title for=__toc>Table of contents</label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=#the-cost-of-javascript class=md-nav__link> The cost of javascript </a> </li> <li class=md-nav__item> <a href=#the-concept-of-laziness class=md-nav__link> The concept of laziness </a> </li> <li class=md-nav__item> <a href=#dynamic-import class=md-nav__link> Dynamic import() </a> </li> <li class=md-nav__item> <a href=#understanding-chunks class=md-nav__link> Understanding chunks </a> </li> <li class=md-nav__item> <a href=#how-webpack-split-the-code-in-chunks class=md-nav__link> How WebPack split the code in chunks </a> </li> <li class=md-nav__item> <a href=#reactlazy-and-suspense class=md-nav__link> React.lazy and Suspense </a> <nav class=md-nav> <ul class=md-nav__list> <li class=md-nav__item> <a href=#about-suspense class=md-nav__link> About Suspense </a> </li> <li class=md-nav__item> <a href=#error-boundaries class=md-nav__link> Error boundaries </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#two-types-of-code-splitting class=md-nav__link> Two types of code splitting </a> <nav class=md-nav> <ul class=md-nav__list> <li class=md-nav__item> <a href=#split-at-the-route-level class=md-nav__link> Split at the route level </a> </li> <li class=md-nav__item> <a href=#split-at-the-component-level class=md-nav__link> Split at the component level </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#webpack-and-import class=md-nav__link> Webpack and import() </a> <nav class=md-nav> <ul class=md-nav__list> <li class=md-nav__item> <a href=#naming-bundles class=md-nav__link> Naming bundles </a> </li> <li class=md-nav__item> <a href=#preloading-and-prefetching class=md-nav__link> Preloading and prefetching </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#common-chunk class=md-nav__link> Common chunk </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content> <article class="md-content__inner md-typeset"> <a href=https://github.com/abhaydgarg/Notebook/tree/master/src/react/code-splitting.md title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a> <h1 id=code-splitting>Code splitting<a class=headerlink href=#code-splitting title="Permanent link">&para;</a></h1> <p>Development, is usually done on above-average machines connected to a strong network. However, not all users access the web from a powerful device or a strong signal. What we want to achieve is to not let the user think that our app is loading.</p> <blockquote> <p>To make sure that our web app is performant we need to program for the worst, not the best case.</p> </blockquote> <h2 id=the-cost-of-javascript>The cost of javascript<a class=headerlink href=#the-cost-of-javascript title="Permanent link">&para;</a></h2> <ol> <li>The first is the cost to send the code to the user’s browser. The smaller the files we send the faster the user’s browser will receive them.</li> <li>The second cost is the action that the browser needs to take to parse and execute the JavaScript we’ve sent him.</li> </ol> <h2 id=the-concept-of-laziness>The concept of laziness<a class=headerlink href=#the-concept-of-laziness title="Permanent link">&para;</a></h2> <p>When we talk about performance we need to first understand the concept of laziness.</p> <blockquote> <p>The concept is that if we can do something later we never want to do it now. Translated this means that if we can postpone sending particular resources to the browser, we should always do that.</p> </blockquote> <h2 id=dynamic-import>Dynamic import()<a class=headerlink href=#dynamic-import title="Permanent link">&para;</a></h2> <p>It loads the module and returns a promise that resolves into a module object that contains all its exports. It can be called from any place in the code.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>import</span><span class=p>(</span><span class=nx>modulePath</span><span class=p>).</span><span class=nx>then</span><span class=p>((</span><span class=nx>data</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>data</span><span class=p>);</span>
+<span class=p>});</span>
+
+<span class=kd>let</span> <span class=nx>module</span> <span class=o>=</span> <span class=nx>await</span> <span class=kr>import</span><span class=p>(</span><span class=nx>modulePath</span><span class=p>)</span>
+
+<span class=kd>let</span> <span class=p>{</span><span class=nx>foo</span><span class=p>,</span> <span class=nx>bar</span><span class=p>}</span> <span class=o>=</span> <span class=nx>await</span> <span class=kr>import</span><span class=p>(</span><span class=nx>modulePath</span><span class=p>);</span>
+</pre></div> </td></tr></table> <h2 id=understanding-chunks>Understanding chunks<a class=headerlink href=#understanding-chunks title="Permanent link">&para;</a></h2> <p>It’s not a very good idea to have one big fat file doing everything. Hence, we have the following use cases where we might need to break down <code>main.js</code> by extracting chunks from it.</p> <ul> <li><strong>Vendor chunk:</strong> Create separate files for vendor code (<em>3rd party code coming from</em> <code>_node_modules_</code>). A single <code>vendor.js</code> file will suffice. Any vendor code used inside <code>index.js</code> (<code>_import_</code> <em>statements of</em> <code>_npm_</code> <em>modules</em>) will break from it and form <code>vendor.js</code> which will be loaded synchronously with <code>main.js</code>.</li> <li><strong>Async chunks:</strong> Create separate files for code which can be lazy-loaded. Like for example a file for every Route of React router which can be lazy-loaded when a route is changed.</li> <li><strong>Common Chunk:</strong> Create a common file from code which is shared between different chunks. For example, if <strong>10 routes</strong> create <strong>10 different async chunks</strong> and these chunks have a common <code>import</code> statement, then code associated with that <code>import</code> statement will get injected into respective chunk files separately. That would load the same piece of code every single time we change the route, which is not very good for UX. Instead, we could take out common code shared between different chunks and create <code>common.js</code> file which will be loaded synchronously with <code>main.js</code> beforehand.</li> </ul> <h2 id=how-webpack-split-the-code-in-chunks>How WebPack split the code in chunks<a class=headerlink href=#how-webpack-split-the-code-in-chunks title="Permanent link">&para;</a></h2> <p>Whenever Webpack sees <code>import()</code> function, it is going to create an async chunk file. It does not include the module in a <code>main.js</code> file and create a separate file in output folder. If you look at the output folder, you will see other js files along with <code>main.js</code> file.</p> <h2 id=reactlazy-and-suspense>React.lazy and Suspense<a class=headerlink href=#reactlazy-and-suspense title="Permanent link">&para;</a></h2> <p>The <code>React.lazy</code> function lets you render a dynamic import as a regular component. This will automatically load the bundle containing the <code>OtherComponent</code> when this component is first rendered. <code>React.lazy</code> takes a function that must call a dynamic <code>import()</code>.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>OtherComponent</span> <span class=o>=</span> <span class=nx>React</span><span class=p>.</span><span class=nx>lazy</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./OtherComponent&#39;</span><span class=p>));</span>
+</pre></div> </td></tr></table> <p>The lazy component should then be rendered inside a <code>Suspense</code> component, which allows us to show some fallback content (such as a loading indicator) while we’re waiting for the lazy component to load.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>OtherComponent</span> <span class=o>=</span> <span class=nx>React</span><span class=p>.</span><span class=nx>lazy</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./OtherComponent&#39;</span><span class=p>));</span>
+
+<span class=kd>function</span> <span class=nx>MyComponent</span><span class=p>()</span> <span class=p>{</span>
+  <span class=k>return</span> <span class=p>(</span>
+    <span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>Suspense</span> <span class=nx>fallback</span><span class=o>=</span><span class=p>{</span><span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span><span class=nx>Loading</span><span class=p>...</span><span class=o>&lt;</span><span class=err>/div&gt;}&gt;</span>
+        <span class=o>&lt;</span><span class=nx>OtherComponent</span> <span class=o>/&gt;</span>
+      <span class=o>&lt;</span><span class=err>/Suspense&gt;</span>
+    <span class=o>&lt;</span><span class=err>/div&gt;</span>
+  <span class=p>);</span>
+<span class=p>}</span>
+</pre></div> </td></tr></table> <div class="admonition note"> <p class=admonition-title>Caveat</p> <p><code>React.lazy</code> currently only supports default exports. If the module you want to import uses named exports, you can create an intermediate module that reexports it as the default.</p> </div> <h3 id=about-suspense>About Suspense<a class=headerlink href=#about-suspense title="Permanent link">&para;</a></h3> <ul> <li>You can wrap multiple lazy components with a single <code>Suspense</code> component. But it is important to know that if you do so then a fallback loader indicator goes away after all the lazy components are loaded. For example, loader goes away when <code>OtherComponent</code> and <code>AnotherComponent</code> are loaded.</li> </ul> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>OtherComponent</span> <span class=o>=</span> <span class=nx>React</span><span class=p>.</span><span class=nx>lazy</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./OtherComponent&#39;</span><span class=p>));</span>
+<span class=kr>const</span> <span class=nx>AnotherComponent</span> <span class=o>=</span> <span class=nx>React</span><span class=p>.</span><span class=nx>lazy</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./AnotherComponent&#39;</span><span class=p>));</span>
+
+<span class=kd>function</span> <span class=nx>MyComponent</span><span class=p>()</span> <span class=p>{</span>
+  <span class=k>return</span> <span class=p>(</span>
+    <span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>Suspense</span> <span class=nx>fallback</span><span class=o>=</span><span class=p>{</span><span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span><span class=nx>Loading</span><span class=p>...</span><span class=o>&lt;</span><span class=err>/div&gt;}&gt;</span>
+        <span class=o>&lt;</span><span class=nx>section</span><span class=o>&gt;</span>
+          <span class=o>&lt;</span><span class=nx>OtherComponent</span> <span class=o>/&gt;</span>
+          <span class=o>&lt;</span><span class=nx>AnotherComponent</span> <span class=o>/&gt;</span>
+        <span class=o>&lt;</span><span class=err>/section&gt;</span>
+      <span class=o>&lt;</span><span class=err>/Suspense&gt;</span>
+    <span class=o>&lt;</span><span class=err>/div&gt;</span>
+  <span class=p>);</span>
+<span class=p>}</span>
+</pre></div> </td></tr></table> <ul> <li>If you want to have separate fallback (loader) for each lazy component then you can wrap each lazy component in their own <code>Suspense</code> component.</li> </ul> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>const</span> <span class=nx>OtherComponent</span> <span class=o>=</span> <span class=nx>React</span><span class=p>.</span><span class=nx>lazy</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./OtherComponent&#39;</span><span class=p>));</span>
+<span class=kr>const</span> <span class=nx>AnotherComponent</span> <span class=o>=</span> <span class=nx>React</span><span class=p>.</span><span class=nx>lazy</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./AnotherComponent&#39;</span><span class=p>));</span>
+
+<span class=kd>function</span> <span class=nx>MyComponent</span><span class=p>()</span> <span class=p>{</span>
+  <span class=k>return</span> <span class=p>(</span>
+    <span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>Suspense</span> <span class=nx>fallback</span><span class=o>=</span><span class=p>{</span><span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span><span class=nx>Loading</span><span class=p>...</span><span class=o>&lt;</span><span class=err>/div&gt;}&gt;</span>
+        <span class=o>&lt;</span><span class=nx>OtherComponent</span> <span class=o>/&gt;</span>
+      <span class=o>&lt;</span><span class=err>/Suspense&gt;</span>
+      <span class=o>&lt;</span><span class=nx>Suspense</span> <span class=nx>fallback</span><span class=o>=</span><span class=p>{</span><span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span><span class=nx>Loading</span><span class=p>...</span><span class=o>&lt;</span><span class=err>/div&gt;}&gt;</span>
+        <span class=o>&lt;</span><span class=nx>AnotherComponent</span> <span class=o>/&gt;</span>
+      <span class=o>&lt;</span><span class=err>/Suspense&gt;</span>
+    <span class=o>&lt;</span><span class=err>/div&gt;</span>
+  <span class=p>);</span>
+<span class=p>}</span>
+</pre></div> </td></tr></table> <h3 id=error-boundaries>Error boundaries<a class=headerlink href=#error-boundaries title="Permanent link">&para;</a></h3> <p>If the other module fails to load (for example, due to network failure), it will trigger an error. You can handle these errors to show a nice user experience and manage recovery with Error Boundaries.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>import</span> <span class=nx>MyErrorBoundary</span> <span class=nx>from</span> <span class=s1>&#39;./MyErrorBoundary&#39;</span><span class=p>;</span>
+<span class=kr>const</span> <span class=nx>OtherComponent</span> <span class=o>=</span> <span class=nx>React</span><span class=p>.</span><span class=nx>lazy</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./OtherComponent&#39;</span><span class=p>));</span>
+
+<span class=kd>function</span> <span class=nx>MyComponent</span><span class=p>()</span> <span class=p>{</span>
+  <span class=k>return</span> <span class=p>(</span>
+    <span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>MyErrorBoundary</span><span class=o>&gt;</span>
+        <span class=o>&lt;</span><span class=nx>Suspense</span> <span class=nx>fallback</span><span class=o>=</span><span class=p>{</span><span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span><span class=nx>Loading</span><span class=p>...</span><span class=o>&lt;</span><span class=err>/div&gt;}&gt;</span>
+          <span class=o>&lt;</span><span class=nx>OtherComponent</span> <span class=o>/&gt;</span>
+        <span class=o>&lt;</span><span class=err>/Suspense&gt;</span>
+      <span class=o>&lt;</span><span class=err>/MyErrorBoundary&gt;</span>
+    <span class=o>&lt;</span><span class=err>/div&gt;</span>
+  <span class=p>);</span>
+<span class=p>}</span>
+</pre></div> </td></tr></table> <h2 id=two-types-of-code-splitting>Two types of code splitting<a class=headerlink href=#two-types-of-code-splitting title="Permanent link">&para;</a></h2> <h3 id=split-at-the-route-level>Split at the route level<a class=headerlink href=#split-at-the-route-level title="Permanent link">&para;</a></h3> <p>Deciding where in your app to introduce code splitting can be a bit tricky. You want to make sure you choose places that will split bundles evenly, but won’t disrupt the user experience. A good place to start is with routes. This will leave us with a separate bundle for each top level route.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>import</span> <span class=p>{</span> <span class=nx>BrowserRouter</span> <span class=nx>as</span> <span class=nx>Router</span><span class=p>,</span> <span class=nx>Route</span><span class=p>,</span> <span class=nx>Switch</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;react-router-dom&#39;</span><span class=p>;</span>
+<span class=kr>import</span> <span class=nx>React</span><span class=p>,</span> <span class=p>{</span> <span class=nx>Suspense</span><span class=p>,</span> <span class=nx>lazy</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;react&#39;</span><span class=p>;</span>
+
+<span class=kr>const</span> <span class=nx>Home</span> <span class=o>=</span> <span class=nx>lazy</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./routes/Home&#39;</span><span class=p>));</span>
+<span class=kr>const</span> <span class=nx>About</span> <span class=o>=</span> <span class=nx>lazy</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./routes/About&#39;</span><span class=p>));</span>
+
+<span class=kr>const</span> <span class=nx>App</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>(</span>
+  <span class=o>&lt;</span><span class=nx>Router</span><span class=o>&gt;</span>
+    <span class=o>&lt;</span><span class=nx>Suspense</span> <span class=nx>fallback</span><span class=o>=</span><span class=p>{</span><span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span><span class=nx>Loading</span><span class=p>...</span><span class=o>&lt;</span><span class=err>/div&gt;}&gt;</span>
+      <span class=o>&lt;</span><span class=nx>Switch</span><span class=o>&gt;</span>
+        <span class=o>&lt;</span><span class=nx>Route</span> <span class=nx>exact</span> <span class=nx>path</span><span class=o>=</span><span class=s2>&quot;/&quot;</span> <span class=nx>component</span><span class=o>=</span><span class=p>{</span><span class=nx>Home</span><span class=p>}</span><span class=o>/&gt;</span>
+        <span class=o>&lt;</span><span class=nx>Route</span> <span class=nx>path</span><span class=o>=</span><span class=s2>&quot;/about&quot;</span> <span class=nx>component</span><span class=o>=</span><span class=p>{</span><span class=nx>About</span><span class=p>}</span><span class=o>/&gt;</span>
+      <span class=o>&lt;</span><span class=err>/Switch&gt;</span>
+    <span class=o>&lt;</span><span class=err>/Suspense&gt;</span>
+  <span class=o>&lt;</span><span class=err>/Router&gt;</span>
+<span class=p>);</span>
+</pre></div> </td></tr></table> <h3 id=split-at-the-component-level>Split at the component level<a class=headerlink href=#split-at-the-component-level title="Permanent link">&para;</a></h3> <p>You do not want to load <code>Comments</code> component when application starts. It should load when <code>Movie</code> component loads. So you make it lazy component. <code>Comments</code> module chunk is loaded by Webpack for you and show the content as soon as parsing is done.</p> <blockquote> <p>You can also make the <code>Comments</code> component loads after user click on say "View Comments" button.</p> </blockquote> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>import</span> <span class=nx>React</span><span class=p>,</span> <span class=p>{</span> <span class=nx>Suspense</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;react&#39;</span><span class=p>;</span>
+<span class=kr>import</span> <span class=nx>Description</span> <span class=nx>from</span> <span class=s1>&#39;./Description&#39;</span><span class=p>;</span>
+
+<span class=kr>const</span> <span class=nx>Comments</span> <span class=o>=</span> <span class=nx>React</span><span class=p>.</span><span class=nx>lazy</span><span class=p>(()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;./Comments&#39;</span><span class=p>));</span>
+
+<span class=kd>function</span> <span class=nx>Movie</span><span class=p>()</span> <span class=p>{</span>
+  <span class=k>return</span> <span class=p>(</span>
+    <span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;</span>
+      <span class=o>&lt;</span><span class=nx>h1</span><span class=o>&gt;</span><span class=nx>My</span> <span class=nx>Movie</span><span class=o>&lt;</span><span class=err>/h1&gt;</span>
+      <span class=o>&lt;</span><span class=nx>Description</span> <span class=o>/&gt;</span>
+      <span class=o>&lt;</span><span class=nx>Suspense</span> <span class=nx>fallback</span><span class=o>=</span><span class=s2>&quot;Loading...&quot;</span><span class=o>&gt;</span>
+        <span class=o>&lt;</span><span class=nx>Comments</span> <span class=o>/&gt;</span>
+      <span class=o>&lt;</span><span class=err>/Suspense&gt;</span>
+    <span class=o>&lt;</span><span class=err>/div&gt;</span>
+  <span class=p>);</span>
+<span class=p>}</span>
+</pre></div> </td></tr></table> <h2 id=webpack-and-import>Webpack and import()<a class=headerlink href=#webpack-and-import title="Permanent link">&para;</a></h2> <h3 id=naming-bundles>Naming bundles<a class=headerlink href=#naming-bundles title="Permanent link">&para;</a></h3> <p>Webpack keeps track of chunks by giving each one an id. So when you fetch a dynamically loaded bundle you will most likely see a file with a name similar to <code>1.bundle.js</code> loaded in the Developer Tools.</p> <p>However, by using Webpack’s magic comments and making a small change in the configuration we can give the different chunks more descriptive names.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>import</span><span class=p>(</span><span class=cm>/* webpackChunkName: &#39;Home&#39; */</span> <span class=s1>&#39;./Home&#39;</span><span class=p>);</span>
+</pre></div> </td></tr></table> <h3 id=preloading-and-prefetching>Preloading and prefetching<a class=headerlink href=#preloading-and-prefetching title="Permanent link">&para;</a></h3> <p>Preloading and prefetching are two techniques that we can use is addition to code splitting to further improve our performance.</p> <p>The importance of component level splitting when some of them use expensive libraries. However, loading the chunk when the user presses a button is still not ideal, for it could lead to flashes of empty content or a short freeze of the UI before what we need is rendered.</p> <p>Whenever we are confident that the user will need a particular bundle, we can use preloading or prefetching to pull it before it is explicitly required. This is again achieved with a Webpack magic comment.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>import</span><span class=p>(</span><span class=cm>/* webpackPrefetch: &#39;Home&#39; */</span> <span class=s1>&#39;./Home&#39;</span><span class=p>);</span>
+<span class=kr>import</span><span class=p>(</span><span class=cm>/* webpackPreload: &#39;Blog&#39; */</span> <span class=s1>&#39;./Blog&#39;</span><span class=p>);</span>
+</pre></div> </td></tr></table> <p>While both preloading and prefetching will fetch a chunk before it is actually required, they will do it with a different level of importance.</p> <p><strong>Preloaded</strong> chunks will be loaded with higher priority in parallel to its parent chunk. Mark chunks to be preloaded only if you are confident that the user <strong>will</strong> interact with them <strong>immediately</strong>.</p> <p><strong>Prefetched</strong> chunks have lower priority and will be loaded in the browser’s idle time. In other words, mark chunks to be prefetched if the user <strong>may</strong> need them at some point.</p> <h2 id=common-chunk>Common chunk<a class=headerlink href=#common-chunk title="Permanent link">&para;</a></h2> <p>Let's say we have two lazy components <code>Home</code> and <code>About</code> and both import component <code>Util</code>. So when, webpack creates chunk file of <code>Home</code> and <code>About</code> then it imcludes the code of <code>Util</code> component in both lazy components.</p> <p>We could avoid this, if we create <code>common.js</code> where if a module is shared between different chunks 2 or more times, then form a new chunk.</p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=c1>// vendor chunk</span>
+<span class=nx>vendor</span><span class=o>:</span> <span class=p>{</span>
+  <span class=c1>// name of the chunk</span>
+  <span class=nx>name</span><span class=o>:</span> <span class=s1>&#39;vendor&#39;</span><span class=p>,</span>
+  <span class=c1>// async + async chunks</span>
+  <span class=nx>chunks</span><span class=o>:</span> <span class=s1>&#39;all&#39;</span><span class=p>,</span>
+  <span class=c1>// import file path containing node_modules</span>
+  <span class=nx>test</span><span class=o>:</span> <span class=sr>/node_modules/</span><span class=p>,</span>
+  <span class=c1>// priority</span>
+  <span class=nx>priority</span><span class=o>:</span> <span class=mi>20</span>
+<span class=p>},</span>
+<span class=c1>// common chunk</span>
+<span class=nx>common</span><span class=o>:</span> <span class=p>{</span>
+  <span class=nx>name</span><span class=o>:</span> <span class=s1>&#39;common&#39;</span><span class=p>,</span>
+  <span class=nx>minChunks</span><span class=o>:</span> <span class=mi>2</span><span class=p>,</span>
+  <span class=nx>chunks</span><span class=o>:</span> <span class=s1>&#39;async&#39;</span><span class=p>,</span>
+  <span class=nx>priority</span><span class=o>:</span> <span class=mi>10</span><span class=p>,</span>
+  <span class=nx>reuseExistingChunk</span><span class=o>:</span> <span class=kc>true</span><span class=p>,</span>
+  <span class=nx>enforce</span><span class=o>:</span> <span class=kc>true</span>
+<span class=p>}</span>
+</pre></div> </td></tr></table> <p><code>reuseExistingChunk</code> tells <code>SplitChunksPlugin</code> to use existing chunk if available instead of creating a new one. For example, if any module imported inside common chunk code is part of another chunk already, then instead of creating a new chunk for it, the older one is reused instead.</p> <p>If a module falls under many chunk groups, then the module will be a part of a chunk group with higher <code>priority</code>. For example, if <code>common</code> chunk has no <code>test</code> cases and <code>chunks</code> set to <code>all</code>, that means any imported module (<em>statically or dynamically</em>) will be part of <code>common</code> chunk as well, even <code>npm</code> module. But since <code>vendor</code> chunk has higher priority, <code>npm</code> modules are more likely to be a part of <code>vendor</code> chunk and reset will stay inside <code>common</code> chunk.</p> <p><code>enforce</code> value is set to true to force <code>SplitChunksPlugin</code> to form this chunk irrespective of the size of the chunk. <code>SplitChunksPlugin</code> by default only form chunks if the resulting chunk size is greater than 30kb. In our case, <code>common</code> chunk contains only <code>HelloComponent</code> code which is obviously less than 30kb. <code>enforce</code> is necessary here or set value of <a href=https://webpack.js.org/plugins/split-chunks-plugin/#splitchunks-minsize>splitChunks.minSize</a> as minimum as possible.</p> <p>Looks like any imported modules which don’t fall inside <code>vendor</code> chunk will be a part of <code>common</code> chunk <strong>but it can’t</strong>. <code>minChunks</code> tells <code>SplitChunksPlugin</code> to only inject module inside <code>common</code> chunk if and only if they are shared between at least 2 chunks (<em>sync or async because of all value of chunks</em>).</p> </article> </div> </div> </main> <footer class=md-footer> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-footer-copyright> <div class=md-footer-copyright__highlight> Abhay Garg </div> powered by <a href=https://www.mkdocs.org>MkDocs</a> and <a href=https://squidfunk.github.io/mkdocs-material/ > Material for MkDocs</a> </div> </div> </div> </footer> </div> <script src=../../assets/javascripts/application.c648116f.js></script> <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script> <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script> </body> </html>
