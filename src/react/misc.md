@@ -1,5 +1,12 @@
 # Misc
 
+## CSS modules OR CSS in JS
+
+CSS-in-JS like styled-components has a drawback that component get css from wrapped component. That means one more component is added in a tree behind the scene which act as HOC which just serve css. This makes the tree large and takes a time to process.
+
+!!! note "Recommendation"
+    We should use CSS modules with BEM conventions. And place component specific css module files inside component. The only thing that we need to take care of is the css class name conflicts.
+
 ## Formik - should know the way it handle form's state
 
 It uses the same pattern that you are very well familiar with, which is pass the function as prop to children. For example, you have a parent comp and function called `hello` which update the parent comp state. Now you want that the children can also have an access to `hello` function and they can also trigger state change. To do this we simply pass the `hello` function to child comp as prop `<Child onHello={hello} />`. Now child can run the `hello` using `props.hello()`.

@@ -1,4 +1,5 @@
 # TOC
+- [Frontend directory structure](frontend-dir-structure.md)
 - [Rules for writing component](rules-writing-component.md)
 - [Props checking](props-checking.md)
 - [setSate()](setsate.md)
