@@ -48,6 +48,18 @@ s 871adf OK, feature Z is fully implemented      --- newer commit
 git remote update origin --prune
 ```
 
+## View file history
+
+```bash
+git log --oneline -M --stat --follow -- [file]
+```
+
+## Filter commits by file content
+
+```bash
+git log -S"function login()"
+```
+
 ## Remove all commits and start fresh
 
 ```bash

@@ -20,3 +20,4 @@
 - [Parallel vs concurrent](parallel-vs-concurrent.md)
 - [Multi-processing vs multi-threading](multiprocessing-multithreading.md)
 - [Types of IO](types-of-io.md)
+- [Technical debt](technical-debt.md)
