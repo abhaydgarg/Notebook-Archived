@@ -23,7 +23,7 @@ export const CounterComponent = ({ value }) => {
 ## useSelector()
 
 ### When it runs
-1. The selector will be run whenever the function component renders (unless its function reference hasn't changed since a previous render of the component so that a cached result can be returned by the hook without re-running the selector's function).
+1. The selector will be run whenever the function component renders (unless its function reference hasn't changed since a previous render of the component so that a cached result can be returned by the hook without re-running the selector's function). I do not think it is big deal, whether function run or not. All we need to care about the return value that we get because it is what detrmines if component need to be render or not. The second point.
 2. Using `useSelector()` will automatically subscribe to the Redux store, and run your selector whenever an action is dispatched. But `useSelector()` only forces a re-render if the selector result appears to be different than the last result. Just like `connect` that all `mapStateToProps` will run if state get changed.
 
 ### Difference from mapStateToProps
@@ -89,4 +89,31 @@ const CounterComponent = ({ name }) => {
 }
 
 export const MemoizedCounterComponent = React.memo(CounterComponent)
+```
+
+### How to use props in useSelector
+
+```js
+// Curried functions
+const getStateById = state => id => state.todo.byId[id];
+const getIdByState = id => state => state.todo.byId[id];
+
+const TodoComponent = () => {
+  const id = 1;
+
+  // Curried - avoid - force re-render because useSelector get
+  // new function reference each time, therefore avoid.
+  const todoCurried = useSelector(getStateById)(id);
+  // Curried - prefer - do not force render because useSelector get
+  // a value and the value is taken into account to decide
+  // if force re-render to be run if value is changed.
+  // Prefer this way.
+  const todoCurried2 = useSelector(getIdByState(id));
+
+  // Closure - prefer because re-render is judged by value retruned.
+  const todoClosure = useSelector(state => state.todo.byId[id]);
+
+  // Curried + Closure - prefer because re-render is judged by value retruned.
+  const todoNormal = useSelector(state => getStateById(state)(id));
+};
 ```
