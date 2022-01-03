@@ -1,5 +1,9 @@
 # Jargon
 
+## Truthy vs Falsy
+
+Truthy and Falsy means that the programming language first coerce the value to boolean type and then check if it is `true` for truthy and `false` for falsy.
+
 ## Propagation
 
 ### Continuation passing style _[CPS]_
