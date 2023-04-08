@@ -1,7 +1,5 @@
 # Notebook
 
-[https://abhaydgarg.github.io/Notebook/](https://abhaydgarg.github.io/Notebook/)
-
 ## Installation
 
 **Note:** Python version required = 3.9.0
@@ -39,3 +37,5 @@ mkdocs build
 # output installed packages in file
 pip3 freeze > requirements.txt
 ```
+
+[Pustak](https://abhaydgarg.github.io/Notebook/)
