@@ -38,4 +38,4 @@ mkdocs build
 pip3 freeze > requirements.txt
 ```
 
-[Pustak](https://abhaydgarg.github.io/Notebook/)
+[Pustak](https://abhaydgarg.github.io/Notebook-Archived/)
